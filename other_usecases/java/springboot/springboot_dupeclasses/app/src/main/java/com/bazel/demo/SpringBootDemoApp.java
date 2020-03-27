@@ -36,9 +36,12 @@
 package com.bazel.demo;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.SpringApplication;
+import com.bazel.demo.IntentionalDupedClass;
 
 @SpringBootApplication
 public class SpringBootDemoApp {
+
+  private IntentionalDupedClass dupe = new IntentionalDupedClass();
 
   public static void main(String[] args) {
       System.out.println("Launching the sample SpringBoot demo application...");

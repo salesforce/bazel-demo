@@ -35,8 +35,8 @@
  */
 package com.bazel.demo;
 
-public class GrapeDupedClass {
+public class IntentionalDupedClass {
     public String hello() {
-      return "Hello!";
+      return "Hello LIB2!";
     }
 }

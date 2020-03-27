@@ -28,8 +28,10 @@ test_deps = [
 springboot(
     name = "springboot_mavenjar",
     boot_app_class = "com.bazel.demo.SpringBootDemoApp",
+
     # FAIL ON DUPLICATE CLASSES: SET THIS TO TRUE
     fail_on_duplicate_classes = False,
+
     java_library = ":base_lib",
     deps = deps,
 )
