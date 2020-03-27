@@ -1,0 +1,134 @@
+#
+# Copyright (c) 2020, salesforce.com, inc.
+# All rights reserved.
+# Licensed under the BSD 3-Clause license.
+# For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
+#
+
+workspace(name = "bazel_demo_springboot_dupeclasses")
+
+load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
+
+# ---------------------------------------------
+# Bazel version check
+# Ensure people are running with a good-enough version of Bazel
+# ---------------------------------------------
+
+load("@bazel_tools//tools/build_defs/repo:git.bzl", "git_repository")
+
+git_repository(
+    name = "bazel_skylib",
+    commit = "e59b620b392a8ebbcf25879fc3fde52b4dc77535",
+    remote = "https://github.com/bazelbuild/bazel-skylib",
+)
+
+load("@bazel_skylib//lib:versions.bzl", "versions")
+
+versions.check("2.2.0")
+
+# ---------------------------------------------
+# Spring Boot Rule
+# ---------------------------------------------
+
+git_repository(
+    name = "bazel_springboot_rule",
+    remote = "https://github.com/salesforce/bazel-springboot-rule.git",
+#    commit = "173ffd0420c9ca449e63f1cbeb27b1b9ce193f77",
+    commit = "e4080bf45622e4d198153234c1288a9fb8c1387c",
+
+)
+
+
+# ---------------------------------------------
+# External Dependencies
+# ---------------------------------------------
+
+# 3.1 is latest, but source stops working in intellij
+RULES_JVM_EXTERNAL_TAG = "2.9"
+RULES_JVM_EXTERNAL_SHA = "e5b97a31a3e8feed91636f42e19b11c49487b85e5de2f387c999ea14d77c7f45"
+
+http_archive(
+    name = "rules_jvm_external",
+    strip_prefix = "rules_jvm_external-%s" % RULES_JVM_EXTERNAL_TAG,
+    sha256 = RULES_JVM_EXTERNAL_SHA,
+    url = "https://github.com/bazelbuild/rules_jvm_external/archive/%s.zip" % RULES_JVM_EXTERNAL_TAG,
+)
+load("@rules_jvm_external//:defs.bzl", "maven_install")
+
+maven_install(
+      artifacts = [
+        "ch.qos.logback:logback-classic:1.2.3",
+        "ch.qos.logback:logback-core:1.2.3",
+        "com.google.guava:guava:20.0",
+        "commons-logging:commons-logging:1.2",
+        "javax.annotation:javax.annotation-api:1.3.2",
+        "junit:junit:4.12",
+        "org.apache.logging.log4j:log4j-api:2.12.1",
+        "org.apache.logging.log4j:log4j-to-slf4j:2.12.1",
+        "org.hamcrest:hamcrest-core:1.3",
+        "org.jboss.logging:jboss-logging:3.4.1.Final",
+        "org.slf4j:jul-to-slf4j:1.7.26",
+        "org.slf4j:slf4j-api:1.7.25",
+        # SPRING BOOT
+        "org.springframework.boot:spring-boot:2.2.1.RELEASE",
+        "org.springframework.boot:spring-boot-actuator:2.2.1.RELEASE",
+        "org.springframework.boot:spring-boot-actuator-autoconfigure:2.2.1.RELEASE",
+        "org.springframework.boot:spring-boot-autoconfigure:2.2.1.RELEASE",
+        "org.springframework.boot:spring-boot-configuration-processor:2.2.1.RELEASE",
+        "org.springframework.boot:spring-boot-loader:2.2.1.RELEASE",
+        "org.springframework.boot:spring-boot-starter:2.2.1.RELEASE",
+        "org.springframework.boot:spring-boot-starter-actuator:2.2.1.RELEASE",
+        "org.springframework.boot:spring-boot-starter-freemarker:2.2.1.RELEASE",
+        "org.springframework.boot:spring-boot-starter-jdbc:2.2.1.RELEASE",
+        "org.springframework.boot:spring-boot-starter-jetty:2.2.1.RELEASE",
+        "org.springframework.boot:spring-boot-starter-logging:2.2.1.RELEASE",
+        "org.springframework.boot:spring-boot-starter-security:2.2.1.RELEASE",
+        "org.springframework.boot:spring-boot-starter-test:2.2.1.RELEASE",
+        "org.springframework.boot:spring-boot-starter-web:2.2.1.RELEASE",
+        "org.springframework.boot:spring-boot-test:2.2.1.RELEASE",
+        "org.springframework.boot:spring-boot-test-autoconfigure:2.2.1.RELEASE",
+        "org.springframework.boot:spring-boot-starter-thymeleaf:2.2.1.RELEASE",
+        # SPRING FRAMEWORK
+        "org.springframework.retry:spring-retry:1.2.4.RELEASE",
+        "org.springframework.security:spring-security-config:5.2.1.RELEASE",
+        "org.springframework.security:spring-security-core:5.2.1.RELEASE",
+        "org.springframework.security:spring-security-web:5.2.1.RELEASE",
+        "org.springframework:spring-aop:5.2.1.RELEASE",
+        "org.springframework:spring-aspects:5.2.1.RELEASE",
+        "org.springframework:spring-beans:5.2.1.RELEASE",
+        "org.springframework:spring-context:5.2.1.RELEASE",
+        "org.springframework:spring-context-support:5.2.1.RELEASE",
+        "org.springframework:spring-core:5.2.1.RELEASE",
+        "org.springframework:spring-expression:5.2.1.RELEASE",
+        "org.springframework:spring-jdbc:5.2.1.RELEASE",
+        "org.springframework:spring-test:5.2.1.RELEASE",
+        "org.springframework:spring-tx:5.2.1.RELEASE",
+        "org.springframework:spring-web:5.2.1.RELEASE",
+        "org.springframework:spring-webmvc:5.2.1.RELEASE",
+        # JETTY
+        "org.eclipse.jetty:jetty-http:9.4.22.v20191022",
+        "org.eclipse.jetty:jetty-io:9.4.22.v20191022",
+        "org.eclipse.jetty:jetty-security:9.4.22.v20191022",
+        "org.eclipse.jetty:jetty-server:9.4.22.v20191022",
+        "org.eclipse.jetty:jetty-servlet:9.4.22.v20191022",
+        "org.eclipse.jetty:jetty-util:9.4.22.v20191022",
+        "org.eclipse.jetty:jetty-webapp:9.4.22.v20191022",
+        "javax.servlet:javax.servlet-api:4.0.1",
+        # JACKSON
+        "com.fasterxml:classmate:1.5.1",
+        "com.fasterxml.jackson.core:jackson-annotations:2.10.0",
+        "com.fasterxml.jackson.core:jackson-core:2.10.0",
+        "com.fasterxml.jackson.core:jackson-databind:2.10.0",
+        "com.fasterxml.jackson.datatype:jackson-datatype-jdk8:2.10.0",
+        "com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.10.0",
+        "com.fasterxml.jackson.module:jackson-module-parameter-names:2.10.0",
+      ],
+      repositories = [
+        "https://maven.google.com",
+        "https://repo1.maven.org/maven2",
+      ],
+      fetch_sources = True,
+      version_conflict_policy = 'pinned',
+      strict_visibility = True,
+      generate_compat_repositories = False,
+)
