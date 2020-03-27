@@ -1,0 +1,68 @@
+#
+# Copyright (c) 2020, salesforce.com, inc.
+# All rights reserved.
+# Licensed under the BSD 3-Clause license.
+# For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
+#
+workspace(name = "bazel_demo_simplejava_mvnjar")
+
+maven_server(
+    name = "default",
+    url = "https://repo1.maven.org/maven2/",
+)
+
+# ---------------------------------------------
+# Bazel version check
+# Ensure people are running with a good-enough version of Bazel
+# ---------------------------------------------
+
+load("@bazel_tools//tools/build_defs/repo:git.bzl", "git_repository")
+
+git_repository(
+    name = "bazel_skylib",
+    commit = "e59b620b392a8ebbcf25879fc3fde52b4dc77535",
+    remote = "https://github.com/bazelbuild/bazel-skylib",
+)
+
+load("@bazel_skylib//lib:versions.bzl", "versions")
+
+versions.check("1.0.0")
+
+# ---------------------------------------------
+# External Dependencies
+# ---------------------------------------------
+
+maven_jar(
+    name = "junit_junit",
+    artifact = "junit:junit:4.12",
+    sha256 = "59721f0805e223d84b90677887d9ff567dc534d7c502ca903c0c2b17f05c116a",
+    sha256_src = "9f43fea92033ad82bcad2ae44cec5c82abc9d6ee4b095cab921d11ead98bf2ff",
+)
+
+maven_jar(
+    name = "org_hamcrest_hamcrest_core",
+    artifact = "org.hamcrest:hamcrest-core:1.3",
+    sha256 = "66fdef91e9739348df7a096aa384a5685f4e875584cce89386a7a47251c4d8e9",
+    sha256_src = "e223d2d8fbafd66057a8848cc94222d63c3cedd652cc48eddc0ab5c39c0f84df",
+)
+
+maven_jar(
+    name = "org_slf4j_slf4j_api",
+    artifact = "org.slf4j:slf4j-api:1.7.25",
+    sha256 = "18c4a0095d5c1da6b817592e767bb23d29dd2f560ad74df75ff3961dbde25b79",
+    sha256_src = "c4bc93180a4f0aceec3b057a2514abe04a79f06c174bbed910a2afb227b79366",
+)
+
+maven_jar(
+    name = "com_google_guava_guava",
+    artifact = "com.google.guava:guava:20.0",
+    sha256 = "36a666e3b71ae7f0f0dca23654b67e086e6c93d192f60ba5dfd5519db6c288c8",
+    sha256_src = "994be5933199a98e98bd09584da2bb69ed722275f6bed61d83459af88ace5cbd",
+)
+
+maven_jar(
+    name = "ch_qos_logback_logback_core",
+    artifact = "ch.qos.logback:logback-core:1.2.3",
+    sha256 = "5946d837fe6f960c02a53eda7a6926ecc3c758bbdd69aa453ee429f858217f22",
+    sha256_src = "1f69b6b638ec551d26b10feeade5a2b77abe347f9759da95022f0da9a63a9971",
+)

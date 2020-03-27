@@ -1,0 +1,21 @@
+# Bazel
+bazel-*
+.user-bazelrc
+
+# IDE
+.vscode/
+.project
+.classpath
+.settings
+*.out
+ij.sh
+.ijwb/
+
+# Maven
+target
+
+# Platform
+.DS_Store
+
+# Tools
+bin
