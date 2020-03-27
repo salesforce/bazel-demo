@@ -29,6 +29,12 @@ export BAZEL_CMD=bazelisk-darwin-amd64
 ./tools/precheckin.sh
 ```
 
+If you want the script to run *bazel clean* in each workspace prior to build/test, pass 'clean' as a param:
+
+```
+./tools/precheckin.sh clean
+```
+
 ### maven_to_netrc.py
 
 The newer Bazel dependency managers (like [coursier](https://github.com/coursier/coursier)) need a *~/.netrc* file with user credentials for

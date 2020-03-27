@@ -20,6 +20,6 @@ java_library(
     name = "lib2",
     srcs = glob(["src/main/java/**/*.java"]),
     resources = glob(["src/main/resources/**"]),
+    visibility = ["//visibility:public"],
     deps = deps,
-    visibility =  ["//visibility:public"],
 )

@@ -91,3 +91,4 @@ echo "${blk}Formatting complete. Review the changes files, commit, and submit a 
 echo ""
 echo $blue
 git status
+echo "${blk}"

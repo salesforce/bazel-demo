@@ -10,8 +10,8 @@ java_library(
     srcs = glob(["src/main/java/**/*.java"]),
     visibility = ["//visibility:public"],
     deps = [
-      "@maven//:com_google_guava_guava",
-      "@maven//:org_slf4j_slf4j_api",
+        "@maven//:com_google_guava_guava",
+        "@maven//:org_slf4j_slf4j_api",
     ],
 )
 
@@ -21,8 +21,8 @@ java_binary(
     main_class = "demo.apple.api.Apple",
     visibility = ["//visibility:public"],
     deps = [
-      "@maven//:com_google_guava_guava",
-      "@maven//:org_slf4j_slf4j_api",
+        "@maven//:com_google_guava_guava",
+        "@maven//:org_slf4j_slf4j_api",
     ],
 )
 

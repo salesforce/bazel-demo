@@ -9,6 +9,12 @@
 # For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
 #
 
+if [ ! -f ".gitignore" ]; then
+  echo "Please launch this script from the root of the repository."
+  echo "  ./tools/precheckin.sh"
+  exit 1
+fi
+
 # allow env to override the bazel command for cases like bazelisk
 if [ -z "$BAZEL_CMD" ]; then
   echo "BAZEL_CMD is unset, which means the default 'bazel' will be used."
@@ -18,42 +24,44 @@ if [ -z "$BAZEL_CMD" ]; then
   BAZEL_CMD=bazel
 fi
 
-if [ ! -f ".gitignore" ]; then
-  echo "Please launch this script from the root of the repository."
-  echo "  ./tools/precheckin.sh"
-  exit 1
+if [ $# -gt 0 ]; then
+  if [ "$1" = "clean" ]; then
+    DOCLEAN="true"
+  fi
+fi
+if [ -n "$DOCLEAN" ]; then
+  echo "Clean mode is enabled; the script will clean each workspace before build/test."
+else
+  echo "Clean mode is not enabled; the script will not clean each workspace before build/test."
+  echo "Pass the string 'clean' to the script to enable it."
 fi
 
+echo ""
+echo "STARTING THE BUILDS"
+echo ""
 
-cd main_usecases/java
-for workspace in */ ; do
-  cd $workspace
-  echo "BUILDING $workspace"
-  $BAZEL_CMD clean
-  $BAZEL_CMD build //...
-  $BAZEL_CMD test //...
-  cd ..
-done
-cd ../..
+for topleveldir in *usecases ; do
+  cd $topleveldir
+  for workspaceFile in $(find . -name WORKSPACE) ; do
+    workspaceDir=$(dirname $workspaceFile)
+    echo "BUILDING $workspaceDir"
+    
+    pushd . > /dev/null
+    cd $workspaceDir
 
-cd other_usecases/java
-for workspace in */ ; do
-  cd $workspace
-  if [ ! -f "WORKSPACE" ]; then
-    for workspace in */ ; do
-      cd $workspace
-      echo "BUILDING $workspace"
+    if [ -n "$DOCLEAN" ]; then
       $BAZEL_CMD clean
-      $BAZEL_CMD build //...
-      $BAZEL_CMD test //...
-      cd ..
-    done
-  else
-    echo "BUILDING $workspace"
-    $BAZEL_CMD clean
+    fi
     $BAZEL_CMD build //...
     $BAZEL_CMD test //...
-  fi
+
+    popd > /dev/null
+  done
   cd ..
 done
-cd ../..
+
+echo ""
+echo "BUILDS DONE. Check the output above for any broken builds."
+echo ""
+echo "REMINDER: if you changed any BUILD files, run ./tools/format_bazel_files.sh before committing."
+echo ""
