@@ -1,0 +1,18 @@
+#
+# Copyright (c) 2020, salesforce.com, inc.
+# All rights reserved.
+# Licensed under the BSD 3-Clause license.
+# For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
+#
+workspace(name = "bazel_demo_resolved_repos_streamlined")
+
+
+# WHERE ARE ALL THE REPOSITORY RULES?!??!
+
+# This variant of the resolved_repos example uses the streamlined approach to the WORKSPACE.
+# It invokes the resolved_repos.bzl file directly using a directive in the .bazelrc file:
+
+#    build --experimental_resolved_file_instead_of_workspace=resolved_repos.bzl
+
+# This WORKSPACE file exists only for documentation, and for IDEs which expect to find a WORKSPACE file.
+# See the README.md for more details.
