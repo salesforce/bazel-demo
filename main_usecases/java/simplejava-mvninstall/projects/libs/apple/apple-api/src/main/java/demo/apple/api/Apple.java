@@ -35,6 +35,8 @@
  */
 package demo.apple.api;
 
+import java.io.InputStream;
+
 public class Apple {
   // mixture of public/private/static members for IDE code completion testing
   public final static double BUSHEL_VOLUME_CUBICMETERS = 0.0352391;
@@ -42,7 +44,7 @@ public class Apple {
   private String species;
 
   public Apple(String species) {
-    this.species = species;
+	  this.species = species;
   }
 
   public Apple(String species, int numSeeds) {
@@ -56,6 +58,13 @@ public class Apple {
 
   public static void main(String[] args) {
 	  Apple apple = new Apple("Granny Smith");
+
+	  // verifies that the build properly packaged the resource file
+	  InputStream is = apple.getClass().getResourceAsStream("/apple.properties");
+	  if (is == null) {
+		  throw new IllegalStateException("Could not access apple.properties.");
+	  }
+
 	  System.out.println("Got my apple at last! It is a "+apple.getSpecies());
   }
 

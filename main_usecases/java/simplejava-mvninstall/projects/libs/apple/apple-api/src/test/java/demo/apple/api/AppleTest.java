@@ -36,17 +36,26 @@
 package demo.apple.api;
 
 import static org.junit.Assert.assertEquals;
+
+import java.io.InputStream;
+
 import org.junit.Test;
 
 public class AppleTest {
 
-  @Test
-  public void testApple() {
-    Apple apple = new Apple("gala");
+	@Test
+	public void testApple() {
+		Apple apple = new Apple("gala");
 
-    assertEquals("gala", apple.getSpecies());
+		assertEquals("gala", apple.getSpecies());
 
-    // this is here to prove that hamcrest is brought in, which is a special lib
-    org.hamcrest.core.StringContains.containsString("test");
-  }
+		// verifies that the build sees the resource file
+		InputStream is = apple.getClass().getResourceAsStream("/test.properties");
+		if (is == null) {
+			throw new IllegalStateException("Could not access test.properties.");
+		}
+
+		// this is here to prove that hamcrest is brought in, which is a special lib
+		org.hamcrest.core.StringContains.containsString("test");
+	}
 }
