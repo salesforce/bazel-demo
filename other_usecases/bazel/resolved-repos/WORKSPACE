@@ -1,0 +1,30 @@
+#
+# Copyright (c) 2020, salesforce.com, inc.
+# All rights reserved.
+# Licensed under the BSD 3-Clause license.
+# For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
+#
+workspace(name = "bazel_demo_resolved_repos")
+
+load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
+http_archive(
+    name = "rules_jvm_external",
+    strip_prefix = "rules_jvm_external-%s" % "2.9",
+    sha256 = "e5b97a31a3e8feed91636f42e19b11c49487b85e5de2f387c999ea14d77c7f45",
+    url = "https://github.com/bazelbuild/rules_jvm_external/archive/%s.zip" % "2.9",
+)
+
+# ---------------------------------------------
+# Load the Resolved Repos from Bazel Sync
+# ---------------------------------------------
+
+load("//:load_resolved_repos.bzl", "load_resolved_repos")
+load_resolved_repos()
+
+# ---------------------------------------------
+# Bazel version check
+# Ensure people are running with a good-enough version of Bazel
+# ---------------------------------------------
+
+load("@bazel_skylib//lib:versions.bzl", "versions")
+versions.check("2.2.0")
