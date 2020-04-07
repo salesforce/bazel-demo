@@ -20,7 +20,7 @@ try-import %workspace%/../../.user-bazelrc
 # **********************************
 # The topic of JDKs is complex with Bazel, as there are multiple JDKs that you can configure.
 
-# build --javacopt="-source 8 -target 8"
+build --javacopt="-source 11 -target 11"
 
 # JDK #1 runs the Bazel executable; must be a full path
 # startup --server_javabase='/Users/jsmith/tools/jdk/Darwin/openjdk_11.0.1_x64'

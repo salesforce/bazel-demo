@@ -18,6 +18,7 @@ java_library(
 java_binary(
     name = "apple-main",
     srcs = glob(["src/main/java/**/*.java"]),
+    resources = glob(["src/main/resources/*.properties"]),
     main_class = "demo.apple.api.Apple",
     visibility = ["//visibility:public"],
     deps = [
@@ -36,6 +37,7 @@ java_test(
     name = "apple-api-test",
     size = "small",
     srcs = ["src/test/java/demo/apple/api/AppleTest.java"],
+    resources = glob(["src/test/resources/*.properties"]),
     test_class = "demo.apple.api.AppleTest",
     deps = [":apple-api"] + test_deps,
 )
