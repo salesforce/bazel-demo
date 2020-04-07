@@ -18,8 +18,8 @@ java_library(
 java_binary(
     name = "apple-main",
     srcs = glob(["src/main/java/**/*.java"]),
-    resources = glob(["src/main/resources/*.properties"]),
     main_class = "demo.apple.api.Apple",
+    resources = glob(["src/main/resources/*.properties"]),
     visibility = ["//visibility:public"],
     deps = [
         "@maven//:com_google_guava_guava",
