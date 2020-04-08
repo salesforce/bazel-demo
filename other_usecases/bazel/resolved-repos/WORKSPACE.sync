@@ -4,7 +4,7 @@
 # Licensed under the BSD 3-Clause license.
 # For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
 #
-workspace(name = "bazel_demo_resolved_file")
+workspace(name = "bazel_demo_resolved_repos")
 
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 load("@bazel_tools//tools/build_defs/repo:git.bzl", "git_repository")
@@ -93,4 +93,14 @@ http_archive(
     name = "com_google_protobuf_javalite",
     strip_prefix = "protobuf-javalite",
     urls = ["https://github.com/google/protobuf/archive/javalite.zip"],
+)
+
+# ---------------------------------------------
+# POMGEN
+# ---------------------------------------------
+
+git_repository(
+    name = "pomgen",
+    remote = "https://github.com/salesforce/pomgen.git",
+    commit = "af94c3a3beac1b4c12e44de56e2a115d5772362b"
 )

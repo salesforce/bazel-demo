@@ -56,10 +56,10 @@ resolved = [
     {
         "original_rule_class": "local_repository",
         "original_attributes": {
-            "name": "bazel_demo_grpc_java",
+            "name": "bazel_demo_resolved_repos_streamlined",
             "path": ".",
         },
-        "native": "local_repository(name = \"bazel_demo_grpc_java\", path = \".\")",
+        "native": "local_repository(name = \"bazel_demo_resolved_repos_streamlined\", path = \".\")",
     },
     {
         "original_rule_class": "local_repository",
@@ -95,7 +95,7 @@ resolved = [
     },
     {
         "original_rule_class": "@bazel_tools//tools/build_defs/repo:git.bzl%git_repository",
-        "definition_information": "Call stack for the definition of repository 'bazel_skylib' which is a git_repository (rule definition at /private/var/tmp/_bazel_plaird/02b68f4559e8354a76ae4ae92539af5d/external/bazel_tools/tools/build_defs/repo/git.bzl:195:18):\n - <builtin>\n - /Users/plaird/dev/bazel-demo/other_usecases/java/bazel-sync/WORKSPACE:21:1",
+        "definition_information": "Call stack for the definition of repository 'bazel_skylib' which is a git_repository (rule definition at /private/var/tmp/_bazel_plaird/85ed75852b8f684ec7310f0ee91c4ec4/external/bazel_tools/tools/build_defs/repo/git.bzl:195:18):\n - <builtin>\n - /Users/plaird/dev/bazel-demo/other_usecases/bazel/resolved-repos-streamlined/WORKSPACE:20:1",
         "original_attributes": {
             "name": "bazel_skylib",
             "remote": "https://github.com/bazelbuild/bazel-skylib",
@@ -126,7 +126,7 @@ resolved = [
     },
     {
         "original_rule_class": "@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
-        "definition_information": "Call stack for the definition of repository 'rules_jvm_external' which is a http_archive (rule definition at /private/var/tmp/_bazel_plaird/02b68f4559e8354a76ae4ae92539af5d/external/bazel_tools/tools/build_defs/repo/http.bzl:296:16):\n - <builtin>\n - /Users/plaird/dev/bazel-demo/other_usecases/java/bazel-sync/WORKSPACE:39:1",
+        "definition_information": "Call stack for the definition of repository 'rules_jvm_external' which is a http_archive (rule definition at /private/var/tmp/_bazel_plaird/85ed75852b8f684ec7310f0ee91c4ec4/external/bazel_tools/tools/build_defs/repo/http.bzl:296:16):\n - <builtin>\n - /Users/plaird/dev/bazel-demo/other_usecases/bazel/resolved-repos-streamlined/WORKSPACE:35:1",
         "original_attributes": {
             "name": "rules_jvm_external",
             "url": "https://github.com/bazelbuild/rules_jvm_external/archive/2.9.zip",
@@ -161,7 +161,7 @@ resolved = [
     },
     {
         "original_rule_class": "@rules_jvm_external//:coursier.bzl%coursier_fetch",
-        "definition_information": "Call stack for the definition of repository 'maven' which is a coursier_fetch (rule definition at /private/var/tmp/_bazel_plaird/02b68f4559e8354a76ae4ae92539af5d/external/rules_jvm_external/coursier.bzl:620:18):\n - <builtin>\n - /private/var/tmp/_bazel_plaird/02b68f4559e8354a76ae4ae92539af5d/external/rules_jvm_external/defs.bzl:89:5\n - /Users/plaird/dev/bazel-demo/other_usecases/java/bazel-sync/WORKSPACE:47:1",
+        "definition_information": "Call stack for the definition of repository 'maven' which is a coursier_fetch (rule definition at /private/var/tmp/_bazel_plaird/85ed75852b8f684ec7310f0ee91c4ec4/external/rules_jvm_external/coursier.bzl:620:18):\n - <builtin>\n - /private/var/tmp/_bazel_plaird/85ed75852b8f684ec7310f0ee91c4ec4/external/rules_jvm_external/defs.bzl:89:5\n - /Users/plaird/dev/bazel-demo/other_usecases/bazel/resolved-repos-streamlined/WORKSPACE:43:1",
         "original_attributes": {
             "name": "maven",
             "repositories": [
@@ -217,7 +217,7 @@ resolved = [
     },
     {
         "original_rule_class": "@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
-        "definition_information": "Call stack for the definition of repository 'rules_python' which is a http_archive (rule definition at /private/var/tmp/_bazel_plaird/02b68f4559e8354a76ae4ae92539af5d/external/bazel_tools/tools/build_defs/repo/http.bzl:296:16):\n - <builtin>\n - /Users/plaird/dev/bazel-demo/other_usecases/java/bazel-sync/WORKSPACE:72:1",
+        "definition_information": "Call stack for the definition of repository 'rules_python' which is a http_archive (rule definition at /private/var/tmp/_bazel_plaird/85ed75852b8f684ec7310f0ee91c4ec4/external/bazel_tools/tools/build_defs/repo/http.bzl:296:16):\n - <builtin>\n - /Users/plaird/dev/bazel-demo/other_usecases/bazel/resolved-repos-streamlined/WORKSPACE:66:1",
         "original_attributes": {
             "name": "rules_python",
             "url": "https://github.com/bazelbuild/rules_python/releases/download/0.0.1/rules_python-0.0.1.tar.gz",
@@ -251,7 +251,7 @@ resolved = [
     },
     {
         "original_rule_class": "@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
-        "definition_information": "Call stack for the definition of repository 'com_google_protobuf' which is a http_archive (rule definition at /private/var/tmp/_bazel_plaird/02b68f4559e8354a76ae4ae92539af5d/external/bazel_tools/tools/build_defs/repo/http.bzl:296:16):\n - <builtin>\n - /Users/plaird/dev/bazel-demo/other_usecases/java/bazel-sync/WORKSPACE:85:1",
+        "definition_information": "Call stack for the definition of repository 'com_google_protobuf' which is a http_archive (rule definition at /private/var/tmp/_bazel_plaird/85ed75852b8f684ec7310f0ee91c4ec4/external/bazel_tools/tools/build_defs/repo/http.bzl:296:16):\n - <builtin>\n - /Users/plaird/dev/bazel-demo/other_usecases/bazel/resolved-repos-streamlined/WORKSPACE:84:1",
         "original_attributes": {
             "name": "com_google_protobuf",
             "urls": [
@@ -289,7 +289,7 @@ resolved = [
     },
     {
         "original_rule_class": "@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
-        "definition_information": "Call stack for the definition of repository 'com_google_protobuf_javalite' which is a http_archive (rule definition at /private/var/tmp/_bazel_plaird/02b68f4559e8354a76ae4ae92539af5d/external/bazel_tools/tools/build_defs/repo/http.bzl:296:16):\n - <builtin>\n - /Users/plaird/dev/bazel-demo/other_usecases/java/bazel-sync/WORKSPACE:93:1",
+        "definition_information": "Call stack for the definition of repository 'com_google_protobuf_javalite' which is a http_archive (rule definition at /private/var/tmp/_bazel_plaird/85ed75852b8f684ec7310f0ee91c4ec4/external/bazel_tools/tools/build_defs/repo/http.bzl:296:16):\n - <builtin>\n - /Users/plaird/dev/bazel-demo/other_usecases/bazel/resolved-repos-streamlined/WORKSPACE:92:1",
         "original_attributes": {
             "name": "com_google_protobuf_javalite",
             "urls": [
@@ -326,8 +326,39 @@ resolved = [
         ],
     },
     {
+        "original_rule_class": "@bazel_tools//tools/build_defs/repo:git.bzl%git_repository",
+        "definition_information": "Call stack for the definition of repository 'pomgen' which is a git_repository (rule definition at /private/var/tmp/_bazel_plaird/85ed75852b8f684ec7310f0ee91c4ec4/external/bazel_tools/tools/build_defs/repo/git.bzl:195:18):\n - <builtin>\n - /Users/plaird/dev/bazel-demo/other_usecases/bazel/resolved-repos-streamlined/WORKSPACE:102:1",
+        "original_attributes": {
+            "name": "pomgen",
+            "remote": "https://github.com/salesforce/pomgen.git",
+            "commit": "af94c3a3beac1b4c12e44de56e2a115d5772362b",
+        },
+        "repositories": [
+            {
+                "rule_class": "@bazel_tools//tools/build_defs/repo:git.bzl%git_repository",
+                "attributes": {
+                    "remote": "https://github.com/salesforce/pomgen.git",
+                    "commit": "af94c3a3beac1b4c12e44de56e2a115d5772362b",
+                    "shallow_since": "1580968603 +0900",
+                    "init_submodules": False,
+                    "verbose": False,
+                    "strip_prefix": "",
+                    "patches": [],
+                    "patch_tool": "",
+                    "patch_args": [
+                        "-p0",
+                    ],
+                    "patch_cmds": [],
+                    "patch_cmds_win": [],
+                    "name": "pomgen",
+                },
+                "output_tree_hash": "26aa708b496c03ca9c2083591ab9cd49e8682c3ba5689b91f417d081f4da2f1f",
+            },
+        ],
+    },
+    {
         "original_rule_class": "@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
-        "definition_information": "Call stack for the definition of repository 'remote_coverage_tools' which is a http_archive (rule definition at /private/var/tmp/_bazel_plaird/02b68f4559e8354a76ae4ae92539af5d/external/bazel_tools/tools/build_defs/repo/http.bzl:296:16):\n - <builtin>\n - /DEFAULT.WORKSPACE.SUFFIX:11:1",
+        "definition_information": "Call stack for the definition of repository 'remote_coverage_tools' which is a http_archive (rule definition at /private/var/tmp/_bazel_plaird/85ed75852b8f684ec7310f0ee91c4ec4/external/bazel_tools/tools/build_defs/repo/http.bzl:296:16):\n - <builtin>\n - /DEFAULT.WORKSPACE.SUFFIX:11:1",
         "original_attributes": {
             "name": "remote_coverage_tools",
             "urls": [
@@ -494,7 +525,7 @@ resolved = [
     },
     {
         "original_rule_class": "@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
-        "definition_information": "Call stack for the definition of repository 'remote_java_tools_darwin' which is a http_archive (rule definition at /private/var/tmp/_bazel_plaird/02b68f4559e8354a76ae4ae92539af5d/external/bazel_tools/tools/build_defs/repo/http.bzl:296:16):\n - <builtin>\n - /private/var/tmp/_bazel_plaird/02b68f4559e8354a76ae4ae92539af5d/external/bazel_tools/tools/build_defs/repo/utils.bzl:201:9\n - /DEFAULT.WORKSPACE.SUFFIX:305:1",
+        "definition_information": "Call stack for the definition of repository 'remote_java_tools_darwin' which is a http_archive (rule definition at /private/var/tmp/_bazel_plaird/85ed75852b8f684ec7310f0ee91c4ec4/external/bazel_tools/tools/build_defs/repo/http.bzl:296:16):\n - <builtin>\n - /private/var/tmp/_bazel_plaird/85ed75852b8f684ec7310f0ee91c4ec4/external/bazel_tools/tools/build_defs/repo/utils.bzl:201:9\n - /DEFAULT.WORKSPACE.SUFFIX:305:1",
         "original_attributes": {
             "name": "remote_java_tools_darwin",
             "urls": [
@@ -534,7 +565,7 @@ resolved = [
     },
     {
         "original_rule_class": "@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
-        "definition_information": "Call stack for the definition of repository 'remote_java_tools_linux' which is a http_archive (rule definition at /private/var/tmp/_bazel_plaird/02b68f4559e8354a76ae4ae92539af5d/external/bazel_tools/tools/build_defs/repo/http.bzl:296:16):\n - <builtin>\n - /private/var/tmp/_bazel_plaird/02b68f4559e8354a76ae4ae92539af5d/external/bazel_tools/tools/build_defs/repo/utils.bzl:201:9\n - /DEFAULT.WORKSPACE.SUFFIX:283:1",
+        "definition_information": "Call stack for the definition of repository 'remote_java_tools_linux' which is a http_archive (rule definition at /private/var/tmp/_bazel_plaird/85ed75852b8f684ec7310f0ee91c4ec4/external/bazel_tools/tools/build_defs/repo/http.bzl:296:16):\n - <builtin>\n - /private/var/tmp/_bazel_plaird/85ed75852b8f684ec7310f0ee91c4ec4/external/bazel_tools/tools/build_defs/repo/utils.bzl:201:9\n - /DEFAULT.WORKSPACE.SUFFIX:283:1",
         "original_attributes": {
             "name": "remote_java_tools_linux",
             "urls": [
@@ -574,7 +605,7 @@ resolved = [
     },
     {
         "original_rule_class": "@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
-        "definition_information": "Call stack for the definition of repository 'remote_java_tools_windows' which is a http_archive (rule definition at /private/var/tmp/_bazel_plaird/02b68f4559e8354a76ae4ae92539af5d/external/bazel_tools/tools/build_defs/repo/http.bzl:296:16):\n - <builtin>\n - /private/var/tmp/_bazel_plaird/02b68f4559e8354a76ae4ae92539af5d/external/bazel_tools/tools/build_defs/repo/utils.bzl:201:9\n - /DEFAULT.WORKSPACE.SUFFIX:294:1",
+        "definition_information": "Call stack for the definition of repository 'remote_java_tools_windows' which is a http_archive (rule definition at /private/var/tmp/_bazel_plaird/85ed75852b8f684ec7310f0ee91c4ec4/external/bazel_tools/tools/build_defs/repo/http.bzl:296:16):\n - <builtin>\n - /private/var/tmp/_bazel_plaird/85ed75852b8f684ec7310f0ee91c4ec4/external/bazel_tools/tools/build_defs/repo/utils.bzl:201:9\n - /DEFAULT.WORKSPACE.SUFFIX:294:1",
         "original_attributes": {
             "name": "remote_java_tools_windows",
             "urls": [
@@ -614,7 +645,7 @@ resolved = [
     },
     {
         "original_rule_class": "@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
-        "definition_information": "Call stack for the definition of repository 'remotejdk10_linux' which is a http_archive (rule definition at /private/var/tmp/_bazel_plaird/02b68f4559e8354a76ae4ae92539af5d/external/bazel_tools/tools/build_defs/repo/http.bzl:296:16):\n - <builtin>\n - /private/var/tmp/_bazel_plaird/02b68f4559e8354a76ae4ae92539af5d/external/bazel_tools/tools/build_defs/repo/utils.bzl:201:9\n - /DEFAULT.WORKSPACE.SUFFIX:183:1",
+        "definition_information": "Call stack for the definition of repository 'remotejdk10_linux' which is a http_archive (rule definition at /private/var/tmp/_bazel_plaird/85ed75852b8f684ec7310f0ee91c4ec4/external/bazel_tools/tools/build_defs/repo/http.bzl:296:16):\n - <builtin>\n - /private/var/tmp/_bazel_plaird/85ed75852b8f684ec7310f0ee91c4ec4/external/bazel_tools/tools/build_defs/repo/utils.bzl:201:9\n - /DEFAULT.WORKSPACE.SUFFIX:183:1",
         "original_attributes": {
             "name": "remotejdk10_linux",
             "urls": [
@@ -655,7 +686,7 @@ resolved = [
     },
     {
         "original_rule_class": "@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
-        "definition_information": "Call stack for the definition of repository 'remotejdk10_linux_aarch64' which is a http_archive (rule definition at /private/var/tmp/_bazel_plaird/02b68f4559e8354a76ae4ae92539af5d/external/bazel_tools/tools/build_defs/repo/http.bzl:296:16):\n - <builtin>\n - /private/var/tmp/_bazel_plaird/02b68f4559e8354a76ae4ae92539af5d/external/bazel_tools/tools/build_defs/repo/utils.bzl:201:9\n - /DEFAULT.WORKSPACE.SUFFIX:221:1",
+        "definition_information": "Call stack for the definition of repository 'remotejdk10_linux_aarch64' which is a http_archive (rule definition at /private/var/tmp/_bazel_plaird/85ed75852b8f684ec7310f0ee91c4ec4/external/bazel_tools/tools/build_defs/repo/http.bzl:296:16):\n - <builtin>\n - /private/var/tmp/_bazel_plaird/85ed75852b8f684ec7310f0ee91c4ec4/external/bazel_tools/tools/build_defs/repo/utils.bzl:201:9\n - /DEFAULT.WORKSPACE.SUFFIX:221:1",
         "original_attributes": {
             "name": "remotejdk10_linux_aarch64",
             "urls": [
@@ -698,7 +729,7 @@ resolved = [
     },
     {
         "original_rule_class": "@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
-        "definition_information": "Call stack for the definition of repository 'remotejdk10_macos' which is a http_archive (rule definition at /private/var/tmp/_bazel_plaird/02b68f4559e8354a76ae4ae92539af5d/external/bazel_tools/tools/build_defs/repo/http.bzl:296:16):\n - <builtin>\n - /private/var/tmp/_bazel_plaird/02b68f4559e8354a76ae4ae92539af5d/external/bazel_tools/tools/build_defs/repo/utils.bzl:201:9\n - /DEFAULT.WORKSPACE.SUFFIX:195:1",
+        "definition_information": "Call stack for the definition of repository 'remotejdk10_macos' which is a http_archive (rule definition at /private/var/tmp/_bazel_plaird/85ed75852b8f684ec7310f0ee91c4ec4/external/bazel_tools/tools/build_defs/repo/http.bzl:296:16):\n - <builtin>\n - /private/var/tmp/_bazel_plaird/85ed75852b8f684ec7310f0ee91c4ec4/external/bazel_tools/tools/build_defs/repo/utils.bzl:201:9\n - /DEFAULT.WORKSPACE.SUFFIX:195:1",
         "original_attributes": {
             "name": "remotejdk10_macos",
             "urls": [
@@ -739,7 +770,7 @@ resolved = [
     },
     {
         "original_rule_class": "@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
-        "definition_information": "Call stack for the definition of repository 'remotejdk10_win' which is a http_archive (rule definition at /private/var/tmp/_bazel_plaird/02b68f4559e8354a76ae4ae92539af5d/external/bazel_tools/tools/build_defs/repo/http.bzl:296:16):\n - <builtin>\n - /private/var/tmp/_bazel_plaird/02b68f4559e8354a76ae4ae92539af5d/external/bazel_tools/tools/build_defs/repo/utils.bzl:201:9\n - /DEFAULT.WORKSPACE.SUFFIX:207:1",
+        "definition_information": "Call stack for the definition of repository 'remotejdk10_win' which is a http_archive (rule definition at /private/var/tmp/_bazel_plaird/85ed75852b8f684ec7310f0ee91c4ec4/external/bazel_tools/tools/build_defs/repo/http.bzl:296:16):\n - <builtin>\n - /private/var/tmp/_bazel_plaird/85ed75852b8f684ec7310f0ee91c4ec4/external/bazel_tools/tools/build_defs/repo/utils.bzl:201:9\n - /DEFAULT.WORKSPACE.SUFFIX:207:1",
         "original_attributes": {
             "name": "remotejdk10_win",
             "urls": [
@@ -780,7 +811,7 @@ resolved = [
     },
     {
         "original_rule_class": "@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
-        "definition_information": "Call stack for the definition of repository 'remotejdk11_linux' which is a http_archive (rule definition at /private/var/tmp/_bazel_plaird/02b68f4559e8354a76ae4ae92539af5d/external/bazel_tools/tools/build_defs/repo/http.bzl:296:16):\n - <builtin>\n - /private/var/tmp/_bazel_plaird/02b68f4559e8354a76ae4ae92539af5d/external/bazel_tools/tools/build_defs/repo/utils.bzl:201:9\n - /DEFAULT.WORKSPACE.SUFFIX:235:1",
+        "definition_information": "Call stack for the definition of repository 'remotejdk11_linux' which is a http_archive (rule definition at /private/var/tmp/_bazel_plaird/85ed75852b8f684ec7310f0ee91c4ec4/external/bazel_tools/tools/build_defs/repo/http.bzl:296:16):\n - <builtin>\n - /private/var/tmp/_bazel_plaird/85ed75852b8f684ec7310f0ee91c4ec4/external/bazel_tools/tools/build_defs/repo/utils.bzl:201:9\n - /DEFAULT.WORKSPACE.SUFFIX:235:1",
         "original_attributes": {
             "name": "remotejdk11_linux",
             "urls": [
@@ -821,7 +852,7 @@ resolved = [
     },
     {
         "original_rule_class": "@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
-        "definition_information": "Call stack for the definition of repository 'remotejdk11_linux_aarch64' which is a http_archive (rule definition at /private/var/tmp/_bazel_plaird/02b68f4559e8354a76ae4ae92539af5d/external/bazel_tools/tools/build_defs/repo/http.bzl:296:16):\n - <builtin>\n - /private/var/tmp/_bazel_plaird/02b68f4559e8354a76ae4ae92539af5d/external/bazel_tools/tools/build_defs/repo/utils.bzl:201:9\n - /DEFAULT.WORKSPACE.SUFFIX:247:1",
+        "definition_information": "Call stack for the definition of repository 'remotejdk11_linux_aarch64' which is a http_archive (rule definition at /private/var/tmp/_bazel_plaird/85ed75852b8f684ec7310f0ee91c4ec4/external/bazel_tools/tools/build_defs/repo/http.bzl:296:16):\n - <builtin>\n - /private/var/tmp/_bazel_plaird/85ed75852b8f684ec7310f0ee91c4ec4/external/bazel_tools/tools/build_defs/repo/utils.bzl:201:9\n - /DEFAULT.WORKSPACE.SUFFIX:247:1",
         "original_attributes": {
             "name": "remotejdk11_linux_aarch64",
             "urls": [
@@ -862,7 +893,7 @@ resolved = [
     },
     {
         "original_rule_class": "@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
-        "definition_information": "Call stack for the definition of repository 'remotejdk11_macos' which is a http_archive (rule definition at /private/var/tmp/_bazel_plaird/02b68f4559e8354a76ae4ae92539af5d/external/bazel_tools/tools/build_defs/repo/http.bzl:296:16):\n - <builtin>\n - /private/var/tmp/_bazel_plaird/02b68f4559e8354a76ae4ae92539af5d/external/bazel_tools/tools/build_defs/repo/utils.bzl:201:9\n - /DEFAULT.WORKSPACE.SUFFIX:259:1",
+        "definition_information": "Call stack for the definition of repository 'remotejdk11_macos' which is a http_archive (rule definition at /private/var/tmp/_bazel_plaird/85ed75852b8f684ec7310f0ee91c4ec4/external/bazel_tools/tools/build_defs/repo/http.bzl:296:16):\n - <builtin>\n - /private/var/tmp/_bazel_plaird/85ed75852b8f684ec7310f0ee91c4ec4/external/bazel_tools/tools/build_defs/repo/utils.bzl:201:9\n - /DEFAULT.WORKSPACE.SUFFIX:259:1",
         "original_attributes": {
             "name": "remotejdk11_macos",
             "urls": [
@@ -903,7 +934,7 @@ resolved = [
     },
     {
         "original_rule_class": "@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
-        "definition_information": "Call stack for the definition of repository 'remotejdk11_win' which is a http_archive (rule definition at /private/var/tmp/_bazel_plaird/02b68f4559e8354a76ae4ae92539af5d/external/bazel_tools/tools/build_defs/repo/http.bzl:296:16):\n - <builtin>\n - /private/var/tmp/_bazel_plaird/02b68f4559e8354a76ae4ae92539af5d/external/bazel_tools/tools/build_defs/repo/utils.bzl:201:9\n - /DEFAULT.WORKSPACE.SUFFIX:271:1",
+        "definition_information": "Call stack for the definition of repository 'remotejdk11_win' which is a http_archive (rule definition at /private/var/tmp/_bazel_plaird/85ed75852b8f684ec7310f0ee91c4ec4/external/bazel_tools/tools/build_defs/repo/http.bzl:296:16):\n - <builtin>\n - /private/var/tmp/_bazel_plaird/85ed75852b8f684ec7310f0ee91c4ec4/external/bazel_tools/tools/build_defs/repo/utils.bzl:201:9\n - /DEFAULT.WORKSPACE.SUFFIX:271:1",
         "original_attributes": {
             "name": "remotejdk11_win",
             "urls": [
@@ -944,7 +975,7 @@ resolved = [
     },
     {
         "original_rule_class": "@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
-        "definition_information": "Call stack for the definition of repository 'remotejdk_linux' which is a http_archive (rule definition at /private/var/tmp/_bazel_plaird/02b68f4559e8354a76ae4ae92539af5d/external/bazel_tools/tools/build_defs/repo/http.bzl:296:16):\n - <builtin>\n - /private/var/tmp/_bazel_plaird/02b68f4559e8354a76ae4ae92539af5d/external/bazel_tools/tools/build_defs/repo/utils.bzl:201:9\n - /DEFAULT.WORKSPACE.SUFFIX:131:1",
+        "definition_information": "Call stack for the definition of repository 'remotejdk_linux' which is a http_archive (rule definition at /private/var/tmp/_bazel_plaird/85ed75852b8f684ec7310f0ee91c4ec4/external/bazel_tools/tools/build_defs/repo/http.bzl:296:16):\n - <builtin>\n - /private/var/tmp/_bazel_plaird/85ed75852b8f684ec7310f0ee91c4ec4/external/bazel_tools/tools/build_defs/repo/utils.bzl:201:9\n - /DEFAULT.WORKSPACE.SUFFIX:131:1",
         "original_attributes": {
             "name": "remotejdk_linux",
             "urls": [
@@ -985,7 +1016,7 @@ resolved = [
     },
     {
         "original_rule_class": "@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
-        "definition_information": "Call stack for the definition of repository 'remotejdk_linux_aarch64' which is a http_archive (rule definition at /private/var/tmp/_bazel_plaird/02b68f4559e8354a76ae4ae92539af5d/external/bazel_tools/tools/build_defs/repo/http.bzl:296:16):\n - <builtin>\n - /private/var/tmp/_bazel_plaird/02b68f4559e8354a76ae4ae92539af5d/external/bazel_tools/tools/build_defs/repo/utils.bzl:201:9\n - /DEFAULT.WORKSPACE.SUFFIX:169:1",
+        "definition_information": "Call stack for the definition of repository 'remotejdk_linux_aarch64' which is a http_archive (rule definition at /private/var/tmp/_bazel_plaird/85ed75852b8f684ec7310f0ee91c4ec4/external/bazel_tools/tools/build_defs/repo/http.bzl:296:16):\n - <builtin>\n - /private/var/tmp/_bazel_plaird/85ed75852b8f684ec7310f0ee91c4ec4/external/bazel_tools/tools/build_defs/repo/utils.bzl:201:9\n - /DEFAULT.WORKSPACE.SUFFIX:169:1",
         "original_attributes": {
             "name": "remotejdk_linux_aarch64",
             "urls": [
@@ -1028,7 +1059,7 @@ resolved = [
     },
     {
         "original_rule_class": "@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
-        "definition_information": "Call stack for the definition of repository 'remotejdk_macos' which is a http_archive (rule definition at /private/var/tmp/_bazel_plaird/02b68f4559e8354a76ae4ae92539af5d/external/bazel_tools/tools/build_defs/repo/http.bzl:296:16):\n - <builtin>\n - /private/var/tmp/_bazel_plaird/02b68f4559e8354a76ae4ae92539af5d/external/bazel_tools/tools/build_defs/repo/utils.bzl:201:9\n - /DEFAULT.WORKSPACE.SUFFIX:143:1",
+        "definition_information": "Call stack for the definition of repository 'remotejdk_macos' which is a http_archive (rule definition at /private/var/tmp/_bazel_plaird/85ed75852b8f684ec7310f0ee91c4ec4/external/bazel_tools/tools/build_defs/repo/http.bzl:296:16):\n - <builtin>\n - /private/var/tmp/_bazel_plaird/85ed75852b8f684ec7310f0ee91c4ec4/external/bazel_tools/tools/build_defs/repo/utils.bzl:201:9\n - /DEFAULT.WORKSPACE.SUFFIX:143:1",
         "original_attributes": {
             "name": "remotejdk_macos",
             "urls": [
@@ -1069,7 +1100,7 @@ resolved = [
     },
     {
         "original_rule_class": "@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
-        "definition_information": "Call stack for the definition of repository 'remotejdk_win' which is a http_archive (rule definition at /private/var/tmp/_bazel_plaird/02b68f4559e8354a76ae4ae92539af5d/external/bazel_tools/tools/build_defs/repo/http.bzl:296:16):\n - <builtin>\n - /private/var/tmp/_bazel_plaird/02b68f4559e8354a76ae4ae92539af5d/external/bazel_tools/tools/build_defs/repo/utils.bzl:201:9\n - /DEFAULT.WORKSPACE.SUFFIX:155:1",
+        "definition_information": "Call stack for the definition of repository 'remotejdk_win' which is a http_archive (rule definition at /private/var/tmp/_bazel_plaird/85ed75852b8f684ec7310f0ee91c4ec4/external/bazel_tools/tools/build_defs/repo/http.bzl:296:16):\n - <builtin>\n - /private/var/tmp/_bazel_plaird/85ed75852b8f684ec7310f0ee91c4ec4/external/bazel_tools/tools/build_defs/repo/utils.bzl:201:9\n - /DEFAULT.WORKSPACE.SUFFIX:155:1",
         "original_attributes": {
             "name": "remotejdk_win",
             "urls": [
@@ -1110,7 +1141,7 @@ resolved = [
     },
     {
         "original_rule_class": "@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
-        "definition_information": "Call stack for the definition of repository 'rules_cc' which is a http_archive (rule definition at /private/var/tmp/_bazel_plaird/02b68f4559e8354a76ae4ae92539af5d/external/bazel_tools/tools/build_defs/repo/http.bzl:296:16):\n - <builtin>\n - /private/var/tmp/_bazel_plaird/02b68f4559e8354a76ae4ae92539af5d/external/bazel_tools/tools/build_defs/repo/utils.bzl:201:9\n - /DEFAULT.WORKSPACE.SUFFIX:327:1",
+        "definition_information": "Call stack for the definition of repository 'rules_cc' which is a http_archive (rule definition at /private/var/tmp/_bazel_plaird/85ed75852b8f684ec7310f0ee91c4ec4/external/bazel_tools/tools/build_defs/repo/http.bzl:296:16):\n - <builtin>\n - /private/var/tmp/_bazel_plaird/85ed75852b8f684ec7310f0ee91c4ec4/external/bazel_tools/tools/build_defs/repo/utils.bzl:201:9\n - /DEFAULT.WORKSPACE.SUFFIX:327:1",
         "original_attributes": {
             "name": "rules_cc",
             "urls": [
@@ -1151,7 +1182,7 @@ resolved = [
     },
     {
         "original_rule_class": "@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
-        "definition_information": "Call stack for the definition of repository 'rules_java' which is a http_archive (rule definition at /private/var/tmp/_bazel_plaird/02b68f4559e8354a76ae4ae92539af5d/external/bazel_tools/tools/build_defs/repo/http.bzl:296:16):\n - <builtin>\n - /private/var/tmp/_bazel_plaird/02b68f4559e8354a76ae4ae92539af5d/external/bazel_tools/tools/build_defs/repo/utils.bzl:201:9\n - /DEFAULT.WORKSPACE.SUFFIX:315:1",
+        "definition_information": "Call stack for the definition of repository 'rules_java' which is a http_archive (rule definition at /private/var/tmp/_bazel_plaird/85ed75852b8f684ec7310f0ee91c4ec4/external/bazel_tools/tools/build_defs/repo/http.bzl:296:16):\n - <builtin>\n - /private/var/tmp/_bazel_plaird/85ed75852b8f684ec7310f0ee91c4ec4/external/bazel_tools/tools/build_defs/repo/utils.bzl:201:9\n - /DEFAULT.WORKSPACE.SUFFIX:315:1",
         "original_attributes": {
             "name": "rules_java",
             "urls": [
@@ -1192,7 +1223,7 @@ resolved = [
     },
     {
         "original_rule_class": "@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
-        "definition_information": "Call stack for the definition of repository 'rules_proto' which is a http_archive (rule definition at /private/var/tmp/_bazel_plaird/02b68f4559e8354a76ae4ae92539af5d/external/bazel_tools/tools/build_defs/repo/http.bzl:296:16):\n - <builtin>\n - /private/var/tmp/_bazel_plaird/02b68f4559e8354a76ae4ae92539af5d/external/bazel_tools/tools/build_defs/repo/utils.bzl:201:9\n - /DEFAULT.WORKSPACE.SUFFIX:339:1",
+        "definition_information": "Call stack for the definition of repository 'rules_proto' which is a http_archive (rule definition at /private/var/tmp/_bazel_plaird/85ed75852b8f684ec7310f0ee91c4ec4/external/bazel_tools/tools/build_defs/repo/http.bzl:296:16):\n - <builtin>\n - /private/var/tmp/_bazel_plaird/85ed75852b8f684ec7310f0ee91c4ec4/external/bazel_tools/tools/build_defs/repo/utils.bzl:201:9\n - /DEFAULT.WORKSPACE.SUFFIX:339:1",
         "original_attributes": {
             "name": "rules_proto",
             "urls": [
@@ -1233,7 +1264,7 @@ resolved = [
     },
     {
         "original_rule_class": "@bazel_tools//tools/build_defs/repo:http.bzl%http_archive",
-        "definition_information": "Call stack for the definition of repository 'android_tools' which is a http_archive (rule definition at /private/var/tmp/_bazel_plaird/02b68f4559e8354a76ae4ae92539af5d/external/bazel_tools/tools/build_defs/repo/http.bzl:296:16):\n - <builtin>\n - /DEFAULT.WORKSPACE.SUFFIX:371:1",
+        "definition_information": "Call stack for the definition of repository 'android_tools' which is a http_archive (rule definition at /private/var/tmp/_bazel_plaird/85ed75852b8f684ec7310f0ee91c4ec4/external/bazel_tools/tools/build_defs/repo/http.bzl:296:16):\n - <builtin>\n - /DEFAULT.WORKSPACE.SUFFIX:371:1",
         "original_attributes": {
             "name": "android_tools",
             "url": "https://mirror.bazel.build/bazel_android_tools/android_tools_pkg-0.14.tar.gz",
@@ -1282,7 +1313,7 @@ resolved = [
     },
     {
         "original_rule_class": "@bazel_tools//tools/osx:xcode_configure.bzl%xcode_autoconf",
-        "definition_information": "Call stack for the definition of repository 'local_config_xcode' which is a xcode_autoconf (rule definition at /private/var/tmp/_bazel_plaird/02b68f4559e8354a76ae4ae92539af5d/external/bazel_tools/tools/osx/xcode_configure.bzl:265:18):\n - <builtin>\n - /private/var/tmp/_bazel_plaird/02b68f4559e8354a76ae4ae92539af5d/external/bazel_tools/tools/osx/xcode_configure.bzl:276:5\n - /DEFAULT.WORKSPACE.SUFFIX:414:1",
+        "definition_information": "Call stack for the definition of repository 'local_config_xcode' which is a xcode_autoconf (rule definition at /private/var/tmp/_bazel_plaird/85ed75852b8f684ec7310f0ee91c4ec4/external/bazel_tools/tools/osx/xcode_configure.bzl:265:18):\n - <builtin>\n - /private/var/tmp/_bazel_plaird/85ed75852b8f684ec7310f0ee91c4ec4/external/bazel_tools/tools/osx/xcode_configure.bzl:276:5\n - /DEFAULT.WORKSPACE.SUFFIX:414:1",
         "original_attributes": {
             "name": "local_config_xcode",
             "xcode_locator": "@bazel_tools//tools/osx:xcode_locator.m",
@@ -1300,7 +1331,7 @@ resolved = [
     },
     {
         "original_rule_class": "@bazel_tools//tools/sh:sh_configure.bzl%sh_config",
-        "definition_information": "Call stack for the definition of repository 'local_config_sh' which is a sh_config (rule definition at /private/var/tmp/_bazel_plaird/02b68f4559e8354a76ae4ae92539af5d/external/bazel_tools/tools/sh/sh_configure.bzl:72:13):\n - <builtin>\n - /private/var/tmp/_bazel_plaird/02b68f4559e8354a76ae4ae92539af5d/external/bazel_tools/tools/sh/sh_configure.bzl:83:5\n - /DEFAULT.WORKSPACE.SUFFIX:417:1",
+        "definition_information": "Call stack for the definition of repository 'local_config_sh' which is a sh_config (rule definition at /private/var/tmp/_bazel_plaird/85ed75852b8f684ec7310f0ee91c4ec4/external/bazel_tools/tools/sh/sh_configure.bzl:72:13):\n - <builtin>\n - /private/var/tmp/_bazel_plaird/85ed75852b8f684ec7310f0ee91c4ec4/external/bazel_tools/tools/sh/sh_configure.bzl:83:5\n - /DEFAULT.WORKSPACE.SUFFIX:417:1",
         "original_attributes": {
             "name": "local_config_sh",
         },
@@ -1316,7 +1347,7 @@ resolved = [
     },
     {
         "original_rule_class": "@bazel_tools//tools/cpp:cc_configure.bzl%cc_autoconf",
-        "definition_information": "Call stack for the definition of repository 'local_config_cc' which is a cc_autoconf (rule definition at /private/var/tmp/_bazel_plaird/02b68f4559e8354a76ae4ae92539af5d/external/bazel_tools/tools/cpp/cc_configure.bzl:143:15):\n - <builtin>\n - /private/var/tmp/_bazel_plaird/02b68f4559e8354a76ae4ae92539af5d/external/bazel_tools/tools/cpp/cc_configure.bzl:179:5\n - /DEFAULT.WORKSPACE.SUFFIX:421:1",
+        "definition_information": "Call stack for the definition of repository 'local_config_cc' which is a cc_autoconf (rule definition at /private/var/tmp/_bazel_plaird/85ed75852b8f684ec7310f0ee91c4ec4/external/bazel_tools/tools/cpp/cc_configure.bzl:143:15):\n - <builtin>\n - /private/var/tmp/_bazel_plaird/85ed75852b8f684ec7310f0ee91c4ec4/external/bazel_tools/tools/cpp/cc_configure.bzl:179:5\n - /DEFAULT.WORKSPACE.SUFFIX:421:1",
         "original_attributes": {
             "name": "local_config_cc",
         },
@@ -1326,13 +1357,13 @@ resolved = [
                 "attributes": {
                     "name": "local_config_cc",
                 },
-                "output_tree_hash": "f34d3b203495eb10dbbff791cedba1e0515331407ede178aeca62d3515469d73",
+                "output_tree_hash": "f832b4a435901d0285bbafade003ed98d7d1c0867d7a928955453c532c91e9d1",
             },
         ],
     },
     {
         "original_rule_class": "@bazel_tools//tools/cpp:cc_configure.bzl%cc_autoconf_toolchains",
-        "definition_information": "Call stack for the definition of repository 'local_config_cc_toolchains' which is a cc_autoconf_toolchains (rule definition at /private/var/tmp/_bazel_plaird/02b68f4559e8354a76ae4ae92539af5d/external/bazel_tools/tools/cpp/cc_configure.bzl:79:26):\n - <builtin>\n - /private/var/tmp/_bazel_plaird/02b68f4559e8354a76ae4ae92539af5d/external/bazel_tools/tools/cpp/cc_configure.bzl:178:5\n - /DEFAULT.WORKSPACE.SUFFIX:421:1",
+        "definition_information": "Call stack for the definition of repository 'local_config_cc_toolchains' which is a cc_autoconf_toolchains (rule definition at /private/var/tmp/_bazel_plaird/85ed75852b8f684ec7310f0ee91c4ec4/external/bazel_tools/tools/cpp/cc_configure.bzl:79:26):\n - <builtin>\n - /private/var/tmp/_bazel_plaird/85ed75852b8f684ec7310f0ee91c4ec4/external/bazel_tools/tools/cpp/cc_configure.bzl:178:5\n - /DEFAULT.WORKSPACE.SUFFIX:421:1",
         "original_attributes": {
             "name": "local_config_cc_toolchains",
         },
