@@ -37,19 +37,25 @@ package helloworld;
 
 import helloworld.messages.HelloRequest;
 import helloworld.messages.HelloReply;
+import com.google.common.base.Strings;
 
 public class HelloWorld {
   public String greeting = "hello!";
-  
+
   public HelloRequest makeRequest(String name) {
 	  HelloRequest req = HelloRequest.newBuilder().setName(name).build();
-	  
+
+    // gratuitous use of Guava just to validate the dep is there
+    if (Strings.isNullOrEmpty(greeting)) {
+      System.err.println("No greeting is specified! That is unfriendly. :(");
+    }
+
 	  return req;
   }
 
   public HelloReply makeReply(HelloRequest request) {
 	  HelloReply rep = HelloReply.newBuilder().setMessage("Hello "+request.getName()).build();
-	  
+
 	  return rep;
   }
 }

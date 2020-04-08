@@ -7,6 +7,7 @@
 
 helloworld_msg_deps = [
     "//proto:helloworld_java_proto",
+    "@maven//:com_google_guava_guava",
 ]
 
 java_library(
