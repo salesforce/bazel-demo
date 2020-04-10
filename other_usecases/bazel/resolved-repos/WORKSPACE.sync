@@ -96,11 +96,26 @@ http_archive(
 )
 
 # ---------------------------------------------
-# POMGEN
+# TRANSITIVE EXTERNAL GIT WORKSPACES
+# BazelRecursiveTop has a rule that is used by this workspace, and it also needs to
+# bring in BazelRecursiveMiddle and BazelRecursiveBottom.
+# This demonstrates transitive git repos (and the lack of real support for it).
 # ---------------------------------------------
 
 git_repository(
-    name = "pomgen",
-    remote = "https://github.com/salesforce/pomgen.git",
-    commit = "af94c3a3beac1b4c12e44de56e2a115d5772362b"
+    name = "BazelRecursiveTop",
+    branch = "master",
+    remote = "https://github.com/plaird/BazelRecursiveTop",
+)
+
+git_repository(
+    name = "BazelRecursiveMiddle",
+    branch = "master",
+    remote = "https://github.com/plaird/BazelRecursiveMiddle",
+)
+
+git_repository(
+    name = "BazelRecursiveBottom",
+    branch = "master",
+    remote = "https://github.com/plaird/BazelRecursiveBottom",
 )

@@ -4,7 +4,7 @@
 # Licensed under the BSD 3-Clause license.
 # For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
 #
-workspace(name = "bazel_demo_resolved_repos_streamlined")
+workspace(name = "bazel_demo_resolved_repos")
 
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 load("@bazel_tools//tools/build_defs/repo:git.bzl", "git_repository")
@@ -96,11 +96,26 @@ http_archive(
 )
 
 # ---------------------------------------------
-# POMGEN
+# TRANSITIVE EXTERNAL GIT WORKSPACES
+# BazelRecursiveTop has a rule that is used by this workspace, and it also needs to
+# bring in BazelRecursiveMiddle and BazelRecursiveBottom.
+# This demonstrates transitive git repos (and the lack of real support for it).
 # ---------------------------------------------
 
 git_repository(
-    name = "pomgen",
-    remote = "https://github.com/salesforce/pomgen.git",
-    commit = "af94c3a3beac1b4c12e44de56e2a115d5772362b"
+    name = "BazelRecursiveTop",
+    branch = "master",
+    remote = "https://github.com/plaird/BazelRecursiveTop",
+)
+
+git_repository(
+    name = "BazelRecursiveMiddle",
+    branch = "master",
+    remote = "https://github.com/plaird/BazelRecursiveMiddle",
+)
+
+git_repository(
+    name = "BazelRecursiveBottom",
+    branch = "master",
+    remote = "https://github.com/plaird/BazelRecursiveBottom",
 )

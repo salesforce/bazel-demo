@@ -4,6 +4,7 @@
 # Licensed under the BSD 3-Clause license.
 # For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
 #
+load("@BazelRecursiveTop//:recursive_top.bzl", "recursive_top_helloworld")
 
 helloworld_msg_deps = [
     "//proto:helloworld_java_proto",
@@ -29,4 +30,11 @@ java_test(
     srcs = ["src/test/java/helloworld/HelloWorldTest.java"],
     test_class = "helloworld.HelloWorldTest",
     deps = [":helloworld"] + test_deps + helloworld_msg_deps,
+)
+
+# This is a demonstration of the recursive/hierarchical workspace pattern.
+# The execution of this rule requires loading 3 external workspaces transitively.
+# See https://github.com/plaird/BazelRecursiveTop for details.
+recursive_top_helloworld(
+    name = "resolved_repos_instance",
 )
