@@ -11,14 +11,13 @@ bazel-*
 ij.sh
 .ijwb/
 
-# Maven
-target
-
 # Platform
 .DS_Store
 
 # Tools
 bin
+__pycache__
+target
 
 # Generated
 build_distdir.sh
