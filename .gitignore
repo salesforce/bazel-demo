@@ -20,5 +20,9 @@ target
 # Tools
 bin
 
+# Generated
+build_distdir.sh
+resolved_repos.py
+
 # Other
 todo.txt
