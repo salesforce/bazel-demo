@@ -23,7 +23,7 @@ Follow the instructions below to learn how to use it.
 
 ### Step 1: Generate the DistDir
 
-1. Navigate to the [simplejava_mvninstall]([existing simple_java workspace](../../../main_usecases/java/simplejava_mvninstall)) workspace.
+1. Navigate to the [simplejava_mvninstall](../../../main_usecases/java/simplejava_mvninstall) workspace.
 1. Issue this command: ```bazel build //... --experimental_resolved_file_instead_of_workspace=resolved_repos.py```
 1. Copy *resolved_repos.py* into this directory
 1. Run this command: ```python3 compute_download_urls.py```
@@ -36,7 +36,7 @@ Follow the instructions below to learn how to use it.
 
 Prepare for the test:
 
-1. cd to your workspace directory: [simplejava_mvninstall]([existing simple_java workspace](../../../main_usecases/java/simplejava_mvninstall))
+1. cd to your workspace directory: [simplejava_mvninstall](../../../main_usecases/java/simplejava_mvninstall)
 1. delete your repository cache: ```rm -rf $(bz info repository_cache)```
 1. clean your workspace: ```bazel clean --expunge```
 
@@ -48,4 +48,4 @@ bazel build --distdir=[path to your distdir] //...
 
 You should notice that the build is able to avoid downloads (aside from the limitations explained above).
 Currently [there is no good way](https://github.com/bazelbuild/bazel/issues/9265) to verify that all of the assets came from *distdir*.
-But with big assets, you will see long pauses for downloads if *distdir* is not working correctly.  
+But with big assets, you will see long pauses for downloads if *distdir* is not working correctly.
