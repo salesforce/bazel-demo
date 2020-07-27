@@ -1,0 +1,143 @@
+#
+# Copyright (c) 2020, salesforce.com, inc.
+# All rights reserved.
+# Licensed under the BSD 3-Clause license.
+# For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
+#
+workspace(name = "bazel_demo_federation")
+
+load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
+load("@bazel_tools//tools/build_defs/repo:git.bzl", "git_repository")
+load("@bazel_tools//tools/build_defs/repo:utils.bzl", "maybe")
+
+# ---------------------------------------------
+# Bazel Federation
+# ---------------------------------------------
+
+http_archive(
+    name = "bazel_federation",
+    url = "https://github.com/bazelbuild/bazel-federation/archive/130c84ec6d60f31b711400e8445a8d0d4a2b5de8.zip",
+    sha256 = "9d4fdf7cc533af0b50f7dd8e58bea85df3b4454b7ae00056d7090eb98e3515cc",
+    strip_prefix = "bazel-federation-130c84ec6d60f31b711400e8445a8d0d4a2b5de8",
+    type = "zip",
+)
+
+load("@bazel_federation//:repositories.bzl",
+     "bazel_skylib",
+     "protobuf",
+)
+
+# ---------------------------------------------
+# Bazel version check
+# Ensure people are running with a good-enough version of Bazel
+# ---------------------------------------------
+
+bazel_skylib()
+load("@bazel_federation//setup:bazel_skylib.bzl", "bazel_skylib_setup")
+bazel_skylib_setup()
+
+load("@bazel_skylib//lib:versions.bzl", "versions")
+versions.check("2.2.0")
+
+# ---------------------------------------------
+# Protobuf
+# ---------------------------------------------
+
+# Protobuf is still an open issue for Federation, so the following protobuf() invocation does not work
+# https://github.com/bazelbuild/bazel-federation/issues/32
+
+# protobuf()
+
+# Load protobuf manually
+
+# Copied from zlib_net https://github.com/grpc/grpc-java/blob/v1.24.x/repositories.bzl
+local_repository(
+    name = "zlib",
+    path = "tools/zlib/zlib-1.2.11",
+)
+
+# proto_library, cc_proto_library, and java_proto_library rules implicitly
+# depend on @com_google_protobuf for protoc and proto runtimes.
+# This statement defines the @com_google_protobuf repo.
+# Copied from https://github.com/grpc/grpc-java/blob/v1.24.x/repositories.bzl
+http_archive(
+    name = "com_google_protobuf",
+    sha256 = "8eb5ca331ab8ca0da2baea7fc0607d86c46c80845deca57109a5d637ccb93bb4",
+    strip_prefix = "protobuf-3.9.0",
+    urls = ["https://github.com/protocolbuffers/protobuf/archive/v3.9.0.zip"],
+)
+
+# ---------------------------------------------
+# Grpc Java
+# ---------------------------------------------
+
+# GRPC is not a part of the Federation yet
+
+git_repository(
+    name = "io_grpc_grpc_java",
+    remote = "https://github.com/grpc/grpc-java.git",
+    tag = "v1.28.0",
+)
+
+load("@io_grpc_grpc_java//:repositories.bzl", "grpc_java_repositories", "IO_GRPC_GRPC_JAVA_ARTIFACTS")
+grpc_java_repositories()
+
+# ---------------------------------------------
+# External Dependencies
+# ---------------------------------------------
+
+# rules_jvm_external is not part of the Federation yet
+
+# 3.1 is latest, but source stops working in intellij
+RULES_JVM_EXTERNAL_TAG = "2.9"
+RULES_JVM_EXTERNAL_SHA = "e5b97a31a3e8feed91636f42e19b11c49487b85e5de2f387c999ea14d77c7f45"
+
+http_archive(
+    name = "rules_jvm_external",
+    strip_prefix = "rules_jvm_external-%s" % RULES_JVM_EXTERNAL_TAG,
+    sha256 = RULES_JVM_EXTERNAL_SHA,
+    url = "https://github.com/bazelbuild/rules_jvm_external/archive/%s.zip" % RULES_JVM_EXTERNAL_TAG,
+)
+load("@rules_jvm_external//:defs.bzl", "maven_install")
+
+maven_install(
+      artifacts = [
+        "ch.qos.logback:logback-core:1.2.3",
+        "com.google.guava:guava:20.0",
+        "junit:junit:4.12",
+        "org.hamcrest:hamcrest-core:1.3",
+        "org.slf4j:slf4j-api:1.7.25",
+        "com.google.code.findbugs:jsr305:3.0.2",
+        "javax.annotation:javax.annotation-api:1.3.2",
+        "com.google.guava:failureaccess:1.0.1",
+        "com.google.j2objc:j2objc-annotations:1.3",
+        "com.google.api.grpc:proto-google-common-protos:1.12.0",
+        "com.google.errorprone:error_prone_annotations:2.3.3",
+        "com.google.code.gson:gson:2.8.6",
+        "io.netty:netty-buffer:4.1.45.Final",
+        "io.netty:netty-codec:4.1.45.Final",
+        "io.netty:netty-codec-http:4.1.45.Final",
+        "io.netty:netty-codec-http2:4.1.45.Final",
+        "io.netty:netty-codec-socks:4.1.45.Final",
+        "io.netty:netty-common:4.1.45.Final",
+        "io.netty:netty-handler:4.1.45.Final",
+        "io.netty:netty-handler-proxy:4.1.45.Final",
+        "io.netty:netty-resolver:4.1.45.Final",
+        "io.netty:netty-transport:4.1.45.Final",
+        "io.opencensus:opencensus-api:0.21.0",
+        "io.opencensus:opencensus-contrib-grpc-metrics:0.21.0",
+        "io.perfmark:perfmark-api:0.17.0",
+        "io.perfmark:perfmark-impl:0.17.0",
+        "org.codehaus.mojo:animal-sniffer-annotations:1.17",
+        "com.google.android:annotations:4.1.1.4",
+        "com.google.truth:truth:0.45",
+      ] + IO_GRPC_GRPC_JAVA_ARTIFACTS,
+      repositories = [
+        "https://maven.google.com",
+        "https://repo1.maven.org/maven2",
+      ],
+      fetch_sources = True,
+      version_conflict_policy = 'pinned',
+      strict_visibility = True,
+      generate_compat_repositories = True,
+  )
