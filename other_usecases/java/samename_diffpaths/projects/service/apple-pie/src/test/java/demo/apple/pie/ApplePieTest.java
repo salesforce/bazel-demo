@@ -33,18 +33,16 @@
  * specific language governing permissions and limitations under the License.
  *
  */
-package demo.apple.api;
+package demo.apple.pie;
 
-import java.util.List;
+import static org.junit.Assert.assertTrue;
+import org.junit.Test;
 
-public interface AppleOrchard {
+public class ApplePieTest {
 
-  int getNumberOfTrees();
-
-  int getNumberBushelsReadyForShipping(String species);
-
-  int getEstimatedNumberBushelsForSeason(String species);
-
-  List<String> getSpeciesOfApples();
-
+  @Test
+  public void testApplePie() {
+    ApplePie applePie = new ApplePie("gala", "granny smith");
+    assertTrue(applePie.isTasty());
+  }
 }

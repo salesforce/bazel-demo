@@ -42,7 +42,7 @@ public class AppleTest {
 
   @Test
   public void testApple() {
-    AppleTart apple = new AppleTart("gala");
+    Apple2 apple = new Apple2("gala");
 
     assertEquals("gala", apple.getSpecies());
 

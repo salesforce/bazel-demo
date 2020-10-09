@@ -42,11 +42,8 @@ public class AppleTest {
 
   @Test
   public void testApple() {
-    AppleTart apple = new AppleTart("gala");
+    Apple1 apple = new Apple1("gala");
 
     assertEquals("gala", apple.getSpecies());
-
-    // this is here to prove that hamcrest is brought in, which is a special lib
-    org.hamcrest.core.StringContains.containsString("test");
   }
 }

@@ -33,17 +33,33 @@
  * specific language governing permissions and limitations under the License.
  *
  */
-package demo.apple.api;
+package demo.apple.pie;
 
-import static org.junit.Assert.assertEquals;
-import org.junit.Test;
+import java.util.List;
+import java.util.ArrayList;
 
-public class AppleTest2 {
+import demo.apple.api.Apple1;
+import demo.apple.api.Apple2;
 
-  @Test
-  public void testApple() {
-    AppleTart apple = new AppleTart("gala");
+public class ApplePie {
 
-    assertEquals("gala", apple.getSpecies());
+  // just proving we can depend on the two different classes in the packages with the
+  // same leaf node name (apple-api).
+  private Apple1 apple1;
+  private Apple2 apple2;
+
+  public ApplePie(String species1, String species2) {
+    this.apple1 = new Apple1(species1);
+    this.apple2 = new Apple2(species2);
   }
+
+  public boolean isTasty() {
+    return true;
+  }
+
+  public static void main(String[] args) {
+	  ApplePie apple = new ApplePie("Gala", "Granny Smith");
+	  System.out.println("Got my apple pie at last!");
+  }
+
 }

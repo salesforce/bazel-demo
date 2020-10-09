@@ -35,16 +35,14 @@
  */
 package demo.apple.api;
 
-import java.util.List;
+public class Apple1 {
+  private String species;
 
-public interface AppleOrchard {
+  public Apple1(String species) {
+    this.species = species;
+  }
 
-  int getNumberOfTrees();
-
-  int getNumberBushelsReadyForShipping(String species);
-
-  int getEstimatedNumberBushelsForSeason(String species);
-
-  List<String> getSpeciesOfApples();
-
+  public String getSpecies() {
+    return species;
+  }
 }

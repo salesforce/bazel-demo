@@ -35,15 +35,14 @@
  */
 package demo.apple.api;
 
-import static org.junit.Assert.assertEquals;
-import org.junit.Test;
+public class Apple2 {
+  private String species;
 
-public class AppleTest2 {
+  public Apple2(String species) {
+    this.species = species;
+  }
 
-  @Test
-  public void testApple() {
-    AppleTart apple = new AppleTart("gala");
-
-    assertEquals("gala", apple.getSpecies());
+  public String getSpecies() {
+    return species;
   }
 }
