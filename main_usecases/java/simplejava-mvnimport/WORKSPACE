@@ -21,7 +21,7 @@ git_repository(
 
 load("@bazel_skylib//lib:versions.bzl", "versions")
 
-versions.check("2.2.0")
+versions.check("3.7.1")
 
 # ---------------------------------------------
 # External Dependencies
@@ -61,9 +61,9 @@ jvm_maven_import_external(
 
 jvm_maven_import_external(
   name = "com_google_guava_guava",
-  artifact = "com.google.guava:guava:26.0-sfdc2",
-  artifact_sha256 = "069518804d5d104ba75031c0509d15babbf1f8e48e5532d18e7b8bfc53ebb596",
-  srcjar_sha256 = "d436899ed36876c2badc216f115ad5422da32c25d8462444b06c82fe0e0c46f6",
+  artifact = "com.google.guava:guava:30.1.1-jre",
+  #artifact_sha256 = "44ce229ce26d880bf3afc362bbfcec34d7e6903d195bbb1db9f3b6e0d9834f06",
+  #srcjar_sha256 = "a43acd23963dc5e34a58d6f6d808f505c5200b39e576adfb837e8e94a063abc5",
   server_urls = mvn_server_urls,
   fetch_sources = fetch_sources,
 )
