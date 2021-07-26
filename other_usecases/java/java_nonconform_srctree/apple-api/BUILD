@@ -7,7 +7,11 @@
 
 java_library(
     name = "apple-api",
-    srcs = glob(["source/dev/**/*.java"]),
+    srcs = glob(["source/dev/**/*.java"]) + glob(["source/flat/*.java"]),
+
+    # glob up a custom resources dir, plus a stray properties file in the root of the package
+    resources = glob(["source/resources/**/*", "recipe.properties"]),
+
     visibility = ["//visibility:public"],
     deps = [
         "@maven//:com_google_guava_guava",
@@ -26,5 +30,13 @@ java_test(
     size = "small",
     srcs = ["source/test/demo/apple/api/AppleTest.java"],
     test_class = "demo.apple.api.AppleTest",
+    deps = [":apple-api"] + test_deps,
+)
+
+java_test(
+    name = "apple-api-test2",
+    size = "small",
+    srcs = ["source/test/demo/apple/api/AppleTest2.java"],
+    test_class = "demo.apple.api.AppleTest2",
     deps = [":apple-api"] + test_deps,
 )

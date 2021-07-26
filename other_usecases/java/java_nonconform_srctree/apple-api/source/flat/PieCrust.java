@@ -35,15 +35,12 @@
  */
 package demo.apple.api;
 
-import static org.junit.Assert.assertEquals;
-import org.junit.Test;
+public class PieCrust {
 
-public class AppleTest2 {
+  private int diameterInCm;
 
-  @Test
-  public void testApple() {
-    Apple apple = new Apple("gala");
- 
-    assertEquals("gala", apple.getSpecies());
+  public PieCrust(int diameterInCm) {
+    this.diameterInCm = diameterInCm;
   }
+
 }

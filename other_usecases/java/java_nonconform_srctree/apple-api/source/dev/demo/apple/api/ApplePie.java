@@ -35,15 +35,10 @@
  */
 package demo.apple.api;
 
-import static org.junit.Assert.assertEquals;
-import org.junit.Test;
+import java.util.List;
+import java.util.ArrayList;
 
-public class AppleTest2 {
-
-  @Test
-  public void testApple() {
-    Apple apple = new Apple("gala");
- 
-    assertEquals("gala", apple.getSpecies());
-  }
+public class ApplePie {
+    public List<Apple> apples = new ArrayList<>();
+    public PieCrust crust = new PieCrust(30);
 }
