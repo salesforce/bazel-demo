@@ -45,6 +45,7 @@ public class Apple {
 
   public Apple(String species) {
 	  this.species = species;
+	  System.out.println("Apple ctor");
   }
 
   public Apple(String species, int numSeeds) {

@@ -21,3 +21,26 @@ java_binary(
         "@maven//:org_slf4j_slf4j_api",
     ],
 )
+
+test_deps = [
+    "@maven//:junit_junit",
+    "@maven//:org_hamcrest_hamcrest_core",
+    "@maven//:ch_qos_logback_logback_core",
+]
+
+java_test(
+    name = "apple-api-test",
+    size = "small",
+    srcs = ["src/test/java/demo/apple/api/AppleTest.java"],
+    resources = glob(["src/test/resources/*.properties"]),
+    test_class = "demo.apple.api.AppleTest",
+    deps = apple_deps + test_deps,
+)
+
+java_test(
+    name = "apple-api-test2",
+    size = "small",
+    srcs = ["src/test/java/demo/apple/api/AppleTest2.java"],
+    test_class = "demo.apple.api.AppleTest2",
+    deps = apple_deps + test_deps,
+)

@@ -48,5 +48,6 @@ public class AppleTest {
 		Apple apple = new Apple("gala");
 
 		assertEquals("gala", apple.getSpecies());
+		System.out.println("AppleTest");
 	}
 }
