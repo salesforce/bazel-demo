@@ -30,14 +30,13 @@ versions.check("2.2.0")
 # Spring Boot Rule
 # ---------------------------------------------
 
-git_repository(
-    name = "bazel_springboot_rule",
-    remote = "https://github.com/salesforce/bazel-springboot-rule.git",
-#    commit = "173ffd0420c9ca449e63f1cbeb27b1b9ce193f77",
-    commit = "e4080bf45622e4d198153234c1288a9fb8c1387c",
-
+http_archive(
+    name = "rules_spring",
+    sha256 = "9385652bb92d365675d1ca7c963672a8091dc5940a9e307104d3c92e7a789c8e",
+    urls = [
+         "https://github.com/salesforce/rules_spring/releases/download/2.1.4/rules-spring-2.1.4.zip",
+    ],
 )
-
 
 # ---------------------------------------------
 # External Dependencies

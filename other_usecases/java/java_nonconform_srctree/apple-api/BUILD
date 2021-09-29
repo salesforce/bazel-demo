@@ -7,7 +7,7 @@
 
 java_library(
     name = "apple-api",
-    srcs = glob(["source/dev/**/*.java"]) + glob(["source/flat/*.java"]),
+    srcs = glob(["source/dev/**/*.java"]) + glob(["source/dev2/**/*.java"]) + glob(["source/flat/*.java"]),
 
     # glob up a custom resources dir, plus a stray properties file in the root of the package
     resources = glob(["source/resources/**/*", "recipe.properties"]),
@@ -36,7 +36,7 @@ java_test(
 java_test(
     name = "apple-api-test2",
     size = "small",
-    srcs = ["source/test/demo/apple/api/AppleTest2.java"],
+    srcs = ["source/test2/demo/apple/api/AppleTest2.java"],
     test_class = "demo.apple.api.AppleTest2",
     deps = [":apple-api"] + test_deps,
 )

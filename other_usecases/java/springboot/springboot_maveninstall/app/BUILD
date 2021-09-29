@@ -5,7 +5,7 @@
 # For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
 #
 
-load("@bazel_springboot_rule//tools/springboot:springboot.bzl", "springboot")
+load("@rules_spring//springboot:springboot.bzl", "springboot")
 
 deps = [
     "@maven//:org_slf4j_slf4j_api",

@@ -7,13 +7,6 @@
 
 # This file contains the settings that get used for the Bazel build.
 
-
-# **********************************
-# Invoke Resolved Repos Directly
-# **********************************
-build --experimental_resolved_file_instead_of_workspace=resolved_repos.bzl
-
-
 # **********************************
 # YOUR OVERRIDES
 # **********************************
@@ -63,17 +56,6 @@ build --explain=/tmp/bazel_explain.txt
 # HYGIENE
 # **********************************
 
-# Projects that bring in '@org_springframework_spring_aspects//jar:jar' will trigger
-# lots of 'ijar: skipping unknown attribute' warnings.
-#   https://github.com/bazelbuild/bazel/issues/2995
-# This filter says not to log to console any warnings coming from analyzing a Nexus dep,
-# (i.e. exclude warnings for any path starting with '@') which fixes the above issue as well as others.
-build --output_filter='^(?!@)'
-
 # BUILD files should fully specify their deps for tests
 # the default behavior for Java tests is to infer junit and hamcrest deps but
-# we disable that here so that projects need to be explicit
 build --explicit_java_test_deps=true
-
-
-#build --incompatible_disable_deprecated_attr_params=false
