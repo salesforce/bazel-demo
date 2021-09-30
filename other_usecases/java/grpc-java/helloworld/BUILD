@@ -24,6 +24,7 @@ grpc_deps = [
     "@com_google_protobuf//:protobuf_java",
     "@com_google_protobuf//:protobuf_java_util",
     "@io_grpc_grpc_java//api",
+    "@io_grpc_grpc_java//core:core_maven",
     "@io_grpc_grpc_java//protobuf",
     "@io_grpc_grpc_java//stub",
 ]
@@ -58,12 +59,27 @@ java_binary(
     ] + grpc_deps + helloworld_msg_deps,
 )
 
+# This is a GRPC specific workaround.
+# Eclipse (and Kotlin) care about reachability of all imports in all jars.
+# libinternal contains some grpc classes that aren't visible.
+# This is what we want as a dep: @io_grpc_grpc_java//core:internal
+# but that is private so we cannot add it. Instead we just wedge in the
+# jar below with java_import.
+#   See https://github.com/salesforce/bazel-eclipse/issues/325
+#   See https://github.com/grpc/grpc-java/issues/4258
+java_import(
+    name = "grpc_lib_internal",
+    jars = ["lib/libinternal.jar",],
+)
+
 test_deps = [
     "@maven//:junit_junit",
     "@maven//:org_hamcrest_hamcrest_core",
     "@maven//:ch_qos_logback_logback_core",
     "@io_grpc_grpc_java//testing",
+    "@io_grpc_grpc_java//core:core_maven",
     "@io_grpc_grpc_java//core:inprocess",
+    ":grpc_lib_internal",
 ]
 
 java_test(

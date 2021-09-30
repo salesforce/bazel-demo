@@ -55,7 +55,7 @@ git_repository(
     tag = "v1.28.0",
 )
 
-load("@io_grpc_grpc_java//:repositories.bzl", "grpc_java_repositories", "IO_GRPC_GRPC_JAVA_ARTIFACTS")
+load("@io_grpc_grpc_java//:repositories.bzl", "grpc_java_repositories", "IO_GRPC_GRPC_JAVA_ARTIFACTS", "IO_GRPC_GRPC_JAVA_OVERRIDE_TARGETS")
 
 grpc_java_repositories()
 
@@ -115,4 +115,5 @@ maven_install(
       version_conflict_policy = 'pinned',
       strict_visibility = True,
       generate_compat_repositories = True,
+      override_targets = IO_GRPC_GRPC_JAVA_OVERRIDE_TARGETS,
   )

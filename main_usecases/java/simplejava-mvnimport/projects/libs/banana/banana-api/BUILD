@@ -15,5 +15,6 @@ java_library(
     deps = [
         ":banana-api",
         "@junit_junit//jar",
+        "@org_hamcrest_hamcrest_core//jar",
     ],
 ) for name in glob(["src/test/java/**/*Test.java"])]
