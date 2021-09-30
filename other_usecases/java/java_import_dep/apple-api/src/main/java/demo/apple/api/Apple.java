@@ -36,7 +36,9 @@
 package demo.apple.api;
 
 // THIS IS THE TEST CASE FOR THIS WORKSPACE
-// this dep comes from the java_import libbanana-api.jar
+// This dep comes from the java_import of libbanana-api.jar
+// We also specify a srcjar, so you should be able to click into this class and
+// your IDE should be able to show the source code.
 import demo.banana.api.Banana;
 
 public class Apple {

@@ -8,6 +8,7 @@
 java_import(
     name = "libbanana",
     jars = ["libs/libbanana-api.jar",],
+    srcjar = "libs/libbanana-api-src.jar",
 )
 
 java_library(
