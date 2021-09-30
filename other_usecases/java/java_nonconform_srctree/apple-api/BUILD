@@ -7,7 +7,7 @@
 
 java_library(
     name = "apple-api",
-    srcs = glob(["source/dev/**/*.java"]) + glob(["source/dev2/**/*.java"]) + glob(["source/flat/*.java"]),
+    srcs = glob(["source/dev/**/*.java"]) + glob(["source/dev2/**/*.java"]),
 
     # glob up a custom resources dir, plus a stray properties file in the root of the package
     resources = glob(["source/resources/**/*", "recipe.properties"]),

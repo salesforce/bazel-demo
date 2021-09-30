@@ -35,15 +35,28 @@
  */
 package demo.apple.api;
 
-import static org.junit.Assert.assertEquals;
-import org.junit.Test;
+public class Apple {
+  // mixture of public/private/static members for IDE code completion testing
+  public final static double BUSHEL_VOLUME_CUBICMETERS = 0.0352391;
+  public int numSeeds;
+  private String species;
 
-public class AppleTest2 {
-
-  @Test
-  public void testApple() {
-    Apple apple = new Apple("gala");
- 
-    assertEquals("gala", apple.getSpecies());
+  public Apple(String species) {
+    this.species = species;
   }
+
+  public Apple(String species, int numSeeds) {
+    this.species = species; 
+    this.numSeeds = numSeeds;
+  }
+
+  public String getSpecies() {
+    return species;
+  }
+  
+  public static void main(String[] args) {
+	  Apple apple = new Apple("Granny Smith");
+	  System.out.println("Got my apple at last! It is a "+apple.getSpecies());
+  }
+
 }

@@ -6,20 +6,9 @@
 #
 
 java_library(
-    name = "apple-api-lib",
-    srcs = glob(["src/main/java/**/*.java"]),
-    visibility = ["//visibility:public"],
-    deps = [
-        "@maven//:com_google_guava_guava",
-        "@maven//:org_slf4j_slf4j_api",
-    ],
-)
+    name = "apple-api",
+    srcs = glob(["source/dev/**/*.java"]) + glob(["source/flat/*.java"]),
 
-java_binary(
-    name = "apple-main",
-    srcs = glob(["src/main/java/**/*.java"]),
-    main_class = "demo.apple.api.Apple",
-    resources = glob(["src/main/resources/*.properties"]),
     visibility = ["//visibility:public"],
     deps = [
         "@maven//:com_google_guava_guava",
@@ -36,7 +25,7 @@ test_deps = [
 java_test(
     name = "apple-api-test",
     size = "small",
-    srcs = ["src/test/java/demo/apple/api/AppleTest.java"],
+    srcs = ["source/test/demo/apple/api/AppleTest.java"],
     test_class = "demo.apple.api.AppleTest",
-    deps = [":apple-api-lib"] + test_deps,
+    deps = [":apple-api"] + test_deps,
 )

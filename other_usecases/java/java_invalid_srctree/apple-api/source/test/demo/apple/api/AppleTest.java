@@ -35,10 +35,18 @@
  */
 package demo.apple.api;
 
-import java.util.List;
-import java.util.ArrayList;
+import static org.junit.Assert.assertEquals;
+import org.junit.Test;
 
-public class ApplePie2 {
-    public List<Apple2> apples = new ArrayList<>();
-    public PieCrust crust = new PieCrust(30);
+public class AppleTest {
+
+  @Test
+  public void testApple() {
+    Apple apple = new Apple("gala");
+
+    assertEquals("gala", apple.getSpecies());
+
+    // this is here to prove that hamcrest is brought in, which is a special lib
+    org.hamcrest.core.StringContains.containsString("test");
+  }
 }
