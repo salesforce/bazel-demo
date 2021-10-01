@@ -1,4 +1,4 @@
-### Spring Boot with Maven Install
+### Simple Java Workspace with Maven Install
 
 The **simple java workspace** is a Bazel workspace used for doing basic Bazel demos and IDE testing.
 It is the core use case for the [Bazel Eclipse Feature](https://github.com/salesforce/bazel-eclipse).
