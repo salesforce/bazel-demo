@@ -33,33 +33,17 @@
  * specific language governing permissions and limitations under the License.
  *
  */
-package demo.grapes.api;
+package demo.apple.api;
 
+import static org.junit.Assert.assertEquals;
+import org.junit.Test;
 
-import com.google.common.base.Preconditions;
-import demo.apple.api.Apple;
+public class AppleTest {
 
-public class Grapes {
-  // mixture of public/private/static members for IDE code completion testing
-  public final static double BUSHEL_VOLUME_CUBICMETERS = 0.0352391;
-  public int numSeeds;
-  private String species;
+  @Test
+  public void testApple() {
+    Apple apple = new Apple("gala");
 
-  public Grapes(String species) {
-    this.species = species;
+    assertEquals("gala", apple.getSpecies());
   }
-
-  public Grapes(String species, int numSeeds) {
-    Preconditions.checkNotNull(species);
-    Apple apple = new Apple("granny");
-    this.species = species;
-    this.numSeeds = numSeeds;
-
-
-  }
-
-  public String getSpecies() {
-    return species;
-  }
-
 }

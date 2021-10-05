@@ -33,33 +33,30 @@
  * specific language governing permissions and limitations under the License.
  *
  */
-package demo.grapes.api;
+package demo.apple.api;
 
-
-import com.google.common.base.Preconditions;
-import demo.apple.api.Apple;
-
-public class Grapes {
+public class Apple {
   // mixture of public/private/static members for IDE code completion testing
   public final static double BUSHEL_VOLUME_CUBICMETERS = 0.0352391;
   public int numSeeds;
   private String species;
 
-  public Grapes(String species) {
+  public Apple(String species) {
     this.species = species;
   }
 
-  public Grapes(String species, int numSeeds) {
-    Preconditions.checkNotNull(species);
-    Apple apple = new Apple("granny");
+  public Apple(String species, int numSeeds) {
     this.species = species;
     this.numSeeds = numSeeds;
-
-
   }
 
   public String getSpecies() {
     return species;
+  }
+
+  public static void main(String[] args) {
+	  Apple apple = new Apple("Granny Smith");
+	  System.out.println("Got my apple at last! It is a "+apple.getSpecies());
   }
 
 }

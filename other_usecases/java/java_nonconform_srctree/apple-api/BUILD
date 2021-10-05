@@ -19,6 +19,18 @@ java_library(
     ],
 )
 
+java_binary(
+    name = "apple-main",
+    srcs = glob(["source/dev/**/*.java"]),
+    main_class = "demo.apple.api.Apple",
+    resources = glob(["src/main/resources/*.properties"]),
+    visibility = ["//visibility:public"],
+    deps = [
+        "@maven//:com_google_guava_guava",
+        "@maven//:org_slf4j_slf4j_api",
+    ],
+)
+
 test_deps = [
     "@maven//:junit_junit",
     "@maven//:org_hamcrest_hamcrest_core",

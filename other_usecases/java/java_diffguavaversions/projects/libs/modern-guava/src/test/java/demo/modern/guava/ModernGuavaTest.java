@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2020, Salesforce.com, Inc. All rights reserved.
+ * Copyright (c) 2021, Salesforce.com, Inc. All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without modification, are permitted provided that the
  * following conditions are met:
@@ -33,33 +33,14 @@
  * specific language governing permissions and limitations under the License.
  *
  */
-package demo.grapes.api;
+package demo.modern.guava;
 
+import org.junit.Test;
 
-import com.google.common.base.Preconditions;
-import demo.apple.api.Apple;
+public class ModernGuavaTest {
 
-public class Grapes {
-  // mixture of public/private/static members for IDE code completion testing
-  public final static double BUSHEL_VOLUME_CUBICMETERS = 0.0352391;
-  public int numSeeds;
-  private String species;
-
-  public Grapes(String species) {
-    this.species = species;
+  @Test
+  public void testModernGuava() {
+    ModernGuava guava = new ModernGuava();
   }
-
-  public Grapes(String species, int numSeeds) {
-    Preconditions.checkNotNull(species);
-    Apple apple = new Apple("granny");
-    this.species = species;
-    this.numSeeds = numSeeds;
-
-
-  }
-
-  public String getSpecies() {
-    return species;
-  }
-
 }

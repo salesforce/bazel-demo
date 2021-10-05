@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2020, Salesforce.com, Inc. All rights reserved.
+ * Copyright (c) 2021, Salesforce.com, Inc. All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without modification, are permitted provided that the
  * following conditions are met:
@@ -33,33 +33,25 @@
  * specific language governing permissions and limitations under the License.
  *
  */
-package demo.grapes.api;
+package demo.old.guava;
 
+import com.google.common.graph.AbstractValueGraph;
 
-import com.google.common.base.Preconditions;
-import demo.apple.api.Apple;
+public class OldGuava {
+  public void testCase(AbstractValueGraph<Integer, Integer> graph) {
+    Integer one = 1;
+    Integer two = 2;
+    Boolean result = null;
 
-public class Grapes {
-  // mixture of public/private/static members for IDE code completion testing
-  public final static double BUSHEL_VOLUME_CUBICMETERS = 0.0352391;
-  public int numSeeds;
-  private String species;
+// TEST CASE
+// This package imports an older version of Guava.
+// hasEdgeConnecting() was added in Guava 23 so it is illegal to use here
+// because this old-guava package uses Guava 18
+// BUT, some IDEs may not detect this as a problem.
 
-  public Grapes(String species) {
-    this.species = species;
+    // Uncomment this line to test the classpath accuracy of your tool:
+    //result = graph.hasEdgeConnecting(one, two);
+
+    System.out.println("One: "+one+" Two: "+two+" Result: "+result);
   }
-
-  public Grapes(String species, int numSeeds) {
-    Preconditions.checkNotNull(species);
-    Apple apple = new Apple("granny");
-    this.species = species;
-    this.numSeeds = numSeeds;
-
-
-  }
-
-  public String getSpecies() {
-    return species;
-  }
-
 }

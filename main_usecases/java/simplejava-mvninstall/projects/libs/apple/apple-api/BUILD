@@ -12,6 +12,7 @@ java_library(
     deps = [
         "@maven//:com_google_guava_guava",
         "@maven//:org_slf4j_slf4j_api",
+        
     ],
 )
 
@@ -25,6 +26,7 @@ java_binary(
         "@maven//:com_google_guava_guava",
         "@maven//:org_slf4j_slf4j_api",
     ],
+    
 )
 
 test_deps = [
