@@ -55,7 +55,7 @@ public class Apple2 {
   }
 
   public static void main(String[] args) {
-	  Apple apple = new Apple("Granny Smith");
+	  Apple2 apple = new Apple2("Granny Smith");
 	  System.out.println("Got my apple at last! It is a "+apple.getSpecies());
   }
 

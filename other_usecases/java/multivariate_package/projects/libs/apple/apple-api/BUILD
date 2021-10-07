@@ -31,7 +31,19 @@ java_binary(
     name = "apple-main",
     srcs = glob(["src-primary/main/java/**/*.java"]),
     main_class = "demo.apple.api.Apple",
-    resources = glob(["src-primary/main/resources/*.properties"]),
+    resources = ["src-primary/main/resources/apple.properties"],
+    visibility = ["//visibility:public"],
+    deps = [
+        "@maven//:com_google_guava_guava",
+        "@maven//:org_slf4j_slf4j_api",
+    ],
+)
+
+java_binary(
+    name = "apple-main-alt",
+    srcs = glob(["src-alt/main/java/**/*.java"]),
+    main_class = "demo.apple.apialt.AppleAlt",
+    resources = ["src-alt/main/resources/apple.properties"],
     visibility = ["//visibility:public"],
     deps = [
         "@maven//:com_google_guava_guava",
@@ -59,6 +71,6 @@ java_test(
     size = "small",
     srcs = ["src-alt/test/java/demo/apple/apialt/AppleAltTest.java"],
     resources = glob(["src-alt/test/resources/test.properties"]),
-    test_class = "demo.apple.api-alt.AppleAltTest",
+    test_class = "demo.apple.apialt.AppleAltTest",
     deps = [":apple-api-alt"] + test_deps,
 )

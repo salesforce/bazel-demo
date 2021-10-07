@@ -23,7 +23,19 @@ java_binary(
     name = "apple-main",
     srcs = glob(["source/dev/**/*.java"]),
     main_class = "demo.apple.api.Apple",
-    resources = glob(["src/main/resources/*.properties"]),
+    resources = glob(["source/resources/*.properties"]),
+    visibility = ["//visibility:public"],
+    deps = [
+        "@maven//:com_google_guava_guava",
+        "@maven//:org_slf4j_slf4j_api",
+    ],
+)
+
+java_binary(
+    name = "apple-main2",
+    srcs = glob(["source/dev2/**/*.java"]),
+    main_class = "demo.apple.api.Apple2",
+    resources = glob(["source/resources/*.properties"]),
     visibility = ["//visibility:public"],
     deps = [
         "@maven//:com_google_guava_guava",
