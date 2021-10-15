@@ -33,17 +33,17 @@
  * specific language governing permissions and limitations under the License.
  *
  */
-package demo.old.guava;
+package demo.secondary.demo;
 
-public class OldGuava {
+public class SecondaryDemo {
 
 // TEST CASE
-// This package imports an older version of Guava.
-// AbstractValueGraph was added after Guava 18 so it is illegal to use here
-// because this old-guava package uses Guava 18
-// BUT, some IDEs may not detect this as a problem.
+// When you uncomment out the lines below, Autodeps will see that you need to add
+// a dependency from the WORKSPACE to the java_library target
 
-    // Uncomment this line to test the classpath accuracy of your tool:
-    //com.google.common.graph.AbstractValueGraph graph = null;
-    //AbstractValueGraph graph = null;
+    // Requires //projects/libs/primary to be added to the BUILD file.
+    //PrimaryDemo internal = null;
+
+    // Requires guava to be added to the BUILD file.
+    //AbstractValueGraph external = null;
 }

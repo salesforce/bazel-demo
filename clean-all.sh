@@ -32,6 +32,7 @@ run_clean "other_usecases/bazel/resolved-repos-streamlined"
 
 run_clean "other_usecases/java/grpc-java"
 run_clean "other_usecases/java/java_alt_config_names"
+run_clean "other_usecases/java/java_autodeps"
 run_clean "other_usecases/java/java_dangling_test"
 run_clean "other_usecases/java/java_diffguavaversions"
 run_clean "other_usecases/java/java_implicit_deps"

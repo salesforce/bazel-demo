@@ -33,6 +33,7 @@ run_build "other_usecases/bazel/resolved-repos-streamlined"
 
 run_build "other_usecases/java/grpc-java"
 run_build "other_usecases/java/java_alt_config_names"
+run_build "other_usecases/java/java_autodeps"
 run_build "other_usecases/java/java_dangling_test"
 run_build "other_usecases/java/java_diffguavaversions"
 run_build "other_usecases/java/java_implicit_deps"

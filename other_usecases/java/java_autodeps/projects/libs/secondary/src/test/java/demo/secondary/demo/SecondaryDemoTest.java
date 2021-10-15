@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2021, Salesforce.com, Inc. All rights reserved.
+ * Copyright (c) 2020, Salesforce.com, Inc. All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without modification, are permitted provided that the
  * following conditions are met:
@@ -33,17 +33,14 @@
  * specific language governing permissions and limitations under the License.
  *
  */
-package demo.old.guava;
+package demo.secondary.demo;
 
-public class OldGuava {
+import org.junit.Test;
 
-// TEST CASE
-// This package imports an older version of Guava.
-// AbstractValueGraph was added after Guava 18 so it is illegal to use here
-// because this old-guava package uses Guava 18
-// BUT, some IDEs may not detect this as a problem.
+public class SecondaryDemoTest {
 
-    // Uncomment this line to test the classpath accuracy of your tool:
-    //com.google.common.graph.AbstractValueGraph graph = null;
-    //AbstractValueGraph graph = null;
+  @Test
+  public void testSecondary() {
+    SecondaryDemo sec = new SecondaryDemo();
+  }
 }
