@@ -5,7 +5,7 @@
 # For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
 #
 
-workspace(name = "bazel_demo_samename_diff_paths")
+workspace(name = "bazel_demo_diffguaveversions")
 
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 

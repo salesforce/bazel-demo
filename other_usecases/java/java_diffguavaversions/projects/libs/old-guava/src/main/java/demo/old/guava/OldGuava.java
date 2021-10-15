@@ -35,23 +35,14 @@
  */
 package demo.old.guava;
 
-import com.google.common.graph.AbstractValueGraph;
-
 public class OldGuava {
-  public void testCase(AbstractValueGraph<Integer, Integer> graph) {
-    Integer one = 1;
-    Integer two = 2;
-    Boolean result = null;
 
 // TEST CASE
 // This package imports an older version of Guava.
-// hasEdgeConnecting() was added in Guava 23 so it is illegal to use here
+// AbstractValueGraph was added after Guava 18 so it is illegal to use here
 // because this old-guava package uses Guava 18
 // BUT, some IDEs may not detect this as a problem.
 
     // Uncomment this line to test the classpath accuracy of your tool:
-    //result = graph.hasEdgeConnecting(one, two);
-
-    System.out.println("One: "+one+" Two: "+two+" Result: "+result);
-  }
+    //com.google.common.graph.AbstractValueGraph graph = null;
 }
