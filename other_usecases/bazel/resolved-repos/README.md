@@ -9,6 +9,8 @@ More information about *resolved repos* and *bazel sync* can be found in these l
 - [First-class Resolved Files](https://blog.bazel.build/2018/09/28/first-class-resolved-file.html)
 - [Fetching Dependencies with Bazel Sync](https://docs.bazel.build/versions/master/external.html#fetching-dependencies)
 
+:fire: These examples are very experimental and more ideas rather than working solutions.
+
 This example extends from the first blog post above, in that it uses synced data for more than *git_repository* rules.
 It also uses the synced data (aka the resolved file) for *http_archive* and *maven_install* dependencies.
 

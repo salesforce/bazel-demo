@@ -23,10 +23,7 @@ run_clean "main_usecases/java/simplejava-mvninstall"
 
 # OTHER USE CASES (BAZEL)
 
-
-run_clean "other_usecases/bazel/federation"
-run_clean "other_usecases/bazel/resolved-repos"
-run_clean "other_usecases/bazel/resolved-repos-streamlined"
+# removed, they are not very useable
 
 # OTHER USE CASES (JAVA)
 

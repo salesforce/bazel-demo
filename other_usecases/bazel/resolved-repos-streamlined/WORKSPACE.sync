@@ -23,7 +23,7 @@ git_repository(
     remote = "https://github.com/bazelbuild/bazel-skylib",
 )
 load("@bazel_skylib//lib:versions.bzl", "versions")
-versions.check("2.2.0")
+versions.check("4.2.1")
 
 # ---------------------------------------------
 # External Dependencies

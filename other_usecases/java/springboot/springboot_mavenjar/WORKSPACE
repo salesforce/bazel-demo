@@ -30,11 +30,14 @@ versions.check("1.0.0")
 
 # ---------------------------------------------
 # Spring Boot Rule
+# we use an obsolete commit here, because the main line
+# no longer supports maven_jar
 # ---------------------------------------------
 
 git_repository(
     name = "bazel_springboot_rule",
     remote = "https://github.com/salesforce/bazel-springboot-rule.git",
+    # dont follow this example unless you need to use obsolete maven_jar!
     commit = "ed5908c25487cd5806a5583006864cde8cf312a3",
 )
 

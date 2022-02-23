@@ -24,10 +24,7 @@ run_build "main_usecases/java/simplejava-mvninstall"
 
 # OTHER USE CASES (BAZEL)
 
-
-run_build "other_usecases/bazel/federation"
-run_build "other_usecases/bazel/resolved-repos"
-run_build "other_usecases/bazel/resolved-repos-streamlined"
+# all removed, they are not very useable
 
 # OTHER USE CASES (JAVA)
 

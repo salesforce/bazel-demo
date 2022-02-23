@@ -37,7 +37,7 @@ load("@bazel_federation//setup:bazel_skylib.bzl", "bazel_skylib_setup")
 bazel_skylib_setup()
 
 load("@bazel_skylib//lib:versions.bzl", "versions")
-versions.check("2.2.0")
+versions.check("4.2.1")
 
 # ---------------------------------------------
 # Protobuf
