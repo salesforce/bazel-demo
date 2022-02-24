@@ -28,7 +28,6 @@ run_build "main_usecases/java/simplejava-mvninstall"
 
 # OTHER USE CASES (JAVA)
 
-run_build "other_usecases/java/grpc-java"
 run_build "other_usecases/java/java_alt_config_names"
 run_build "other_usecases/java/java_autodeps"
 run_build "other_usecases/java/java_dangling_test"

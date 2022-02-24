@@ -67,6 +67,3 @@ build --output_filter='^(?!@)'
 # the default behavior for Java tests is to infer junit and hamcrest deps but
 # we disable that here so that projects need to be explicit
 build --explicit_java_test_deps=true
-
-
-build --incompatible_disable_deprecated_attr_params=false

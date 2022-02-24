@@ -27,7 +27,6 @@ run_clean "main_usecases/java/simplejava-mvninstall"
 
 # OTHER USE CASES (JAVA)
 
-run_clean "other_usecases/java/grpc-java"
 run_clean "other_usecases/java/java_alt_config_names"
 run_clean "other_usecases/java/java_autodeps"
 run_clean "other_usecases/java/java_dangling_test"

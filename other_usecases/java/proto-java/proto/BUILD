@@ -13,7 +13,7 @@ proto_library(
     visibility = ["//visibility:public"],
 )
 
-java_lite_proto_library(
+java_proto_library(
     name = "helloworld_java_proto",
     visibility = ["//visibility:public"],
     deps = [":helloworld_proto"],

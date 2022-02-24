@@ -1,0 +1,69 @@
+#
+# Copyright (c) 2022, salesforce.com, inc.
+# All rights reserved.
+# Licensed under the BSD 3-Clause license.
+# For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
+#
+
+# This file contains the settings that get used for the Bazel build.
+
+# **********************************
+# YOUR OVERRIDES
+# **********************************
+# Put any overrides or supplmental config in the top level .user-bazelrc
+# It is Git ignored.
+try-import %workspace%/../../.user-bazelrc
+
+
+# **********************************
+# JDK
+# **********************************
+# The topic of JDKs is complex with Bazel, as there are multiple JDKs that you can configure.
+
+# build --javacopt="-source 8 -target 8"
+
+# JDK #1 runs the Bazel executable; must be a full path
+# startup --server_javabase='/Users/jsmith/tools/jdk/Darwin/openjdk_11.0.1_x64'
+
+# JDK #2: the jdk used for javac and other build time tools
+#build --host_javabase='//tools/jdk:sfdc-darwin-jdk11'
+
+# JDK #3: the jdk used for running tests
+#build --javabase='//tools/jdk:sfdc-darwin-jdk11'
+
+
+# **********************************
+# ARTIFACT STAMPING
+# **********************************
+# These settings ensure artifacts are built with stamped version info.
+# (if the build target supports build stamping)
+build --stamp
+
+
+# **********************************
+# BUILD TROUBLESHOOTING
+# **********************************
+# These settings make it easier to figure out why a build may not have gone as expected.
+# By setting test_output=errors, we get the error output directly in stdout (instead of just
+# a link to a log file). The explain parameter outputs the build plan for the last build,
+# which can be somewhat helpful if you wonder why some packages get rebuilt.
+build --test_output=errors
+build --verbose_explanations
+build --explain=/tmp/bazel_explain.txt
+
+
+# **********************************
+# HYGIENE
+# **********************************
+
+# Projects that bring in '@org_springframework_spring_aspects//jar:jar' will trigger
+# lots of 'ijar: skipping unknown attribute' warnings.
+#   https://github.com/bazelbuild/bazel/issues/2995
+# This filter says not to log to console any warnings coming from analyzing a Nexus dep,
+# (i.e. exclude warnings for any path starting with '@') which fixes the above issue as well as others.
+build --output_filter='^(?!@)'
+
+# BUILD files should fully specify their deps for tests
+# the default behavior for Java tests is to infer junit and hamcrest deps but
+# we disable that here so that projects need to be explicit
+build --explicit_java_test_deps=true
