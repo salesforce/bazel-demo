@@ -16,7 +16,8 @@ proto_jar=$5
 first_file_arg=6
 
 # setup the debug log file (if desired)
-if [ -z "${debug_protoextract_rule}" ]; then
+protoextract_rule_tmpdir=/tmp
+if [ -z "${DEBUG_PROTOEXTRACT_RULE}" ]; then
     debugfile=/dev/null
 else
     debugdir=$protoextract_rule_tmpdir/debug/protoextract
