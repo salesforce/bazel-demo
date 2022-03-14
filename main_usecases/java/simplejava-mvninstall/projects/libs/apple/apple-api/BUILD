@@ -12,7 +12,7 @@ java_library(
     deps = [
         "@maven//:com_google_guava_guava",
         "@maven//:org_slf4j_slf4j_api",
-        
+        "@maven//:org_springframework_spring_core",
     ],
 )
 
@@ -23,10 +23,9 @@ java_binary(
     resources = glob(["src/main/resources/*.properties"]),
     visibility = ["//visibility:public"],
     deps = [
-        "@maven//:com_google_guava_guava",
-        "@maven//:org_slf4j_slf4j_api",
+        ":apple-api",
     ],
-    
+
 )
 
 test_deps = [
